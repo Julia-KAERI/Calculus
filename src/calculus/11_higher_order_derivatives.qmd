@@ -1,14 +1,17 @@
 ---
 title: "최대최소값 문제와 고계미분"
 number-sections: true
-number-depth : 3
+number-depth : 2
 crossref:
   chapters: true
+  
 ---
 
 {{< include ../../latexmacros.qmd >}}
 
-## 연습문제 : 제 11 장 1 절
+## 적분기호속의 미분법
+
+### 연습문제
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -16,9 +19,11 @@ crossref:
 
 #### SNU 11.1.1
 
+$x>0$ 일 때 다음의 미분을 구하라.
+
 $$
 \dfrac{d}{dx} \int_{x^2}^{x^3} \dfrac{1}{y} e^{xy^2} \, dy
-$$
+$$ 
 
 :::
 
@@ -73,7 +78,7 @@ $$
 
 ::: {.solution}
 
-앞의 1과 같은 방법으로,
+앞의 @exr-CAL_11_1_1 과 같은 방법으로,
 
 $$
 F(x,\,t):=\int_c^t g(x,\,y)\, dy
@@ -107,7 +112,7 @@ $$
 
 ::: {#exr-CAL_11_1_3} 
 
-#### SNU 11.1.3 $
+#### SNU 11.1.3
 
 $k<1$ 일 때 함수
 
@@ -129,9 +134,7 @@ $$
 \end{aligned}
 $$
 
-이며 $1-k\cos^2 x>0$ , $\cos^2 x>0$ 이므로 $f'(k)>0$  이다. 따라서 $f(k)$ 는  $k$ 에 대한 증가함수이다.
-
-$k=0$ 일 때의 순간변화율은
+이며 $1-k\cos^2 x>0$ , $\cos^2 x>0$ 이므로 $f'(k)>0$  이다. 따라서 $f(k)$ 는  $k$ 에 대한 증가함수이다. $k=0$ 일 때의 순간변화율은
 
 $$
 \dfrac{df}{dk}(0)= \int_0^{\pi/2}\dfrac{1}{2}\cos^2x\, dx= \dfrac{\pi}{8}
@@ -174,7 +177,7 @@ $$
 C_u(s):=C(s)+u\bf{n}(s),\qquad s_0\le s\le s_1
 $$
 
-이다. 곡선 $ C_u$ 의 길이를
+이다. 곡선 $C_u$ 의 길이를
 
 $$
 L(u):=\int_{s_0}^{s_1}\left|C'_u(s)\right|\, ds
@@ -212,8 +215,8 @@ $$
 좌표평면이므로 2차원이고, $\bf{n}(s) \propto \bf{t}'(s)$ 이므로, $\bf{n}'(s) \propto \bf{t}(s)$ 이다. 따라서 어떤 스칼라 함수 $f(s)$ 에 대해
 
 $$
-\bf{n}'(s) =f(s)\bf{t}(s) \tag{1}
-$$
+\bf{n}'(s) =f(s)\bf{t}(s) 
+$$ {#eq-exr-CAL_11_1_4_s1}
 
 이다. 또한, $\bf{n}(s) \cdot \bf{t}(s)=0$ 이므로,
 
@@ -223,7 +226,7 @@ $$
 \end{aligned}
 $$
 
-이며, ($1$) 로 부터,
+이며, @eq-exr-CAL_11_1_4_s1 로 부터,
 
 $$
 \bf{n'}(s)\cdot \bf{t}(s) = f(s) |\bf{t}(s)|^2=f(s)
@@ -262,7 +265,7 @@ $$
 s(t) = \int_0^t |X' (t') |\, dt' = \sqrt{a^2 \sin ^2 t' + b^2 \cos ^2 t'}\, dt'
 $$
 
-이며 문제, 9.8.3 에서 보았듯이,
+이며 @exr-CAL_9_8_3 에서 보았듯이,
 
 $$
 \kappa (t) =\dfrac{|ab\sin^2 t+ab\cos^2 t|}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}=\dfrac{ab}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}
@@ -284,16 +287,25 @@ $$
 
 </br>
 
-## 연습문제 : 제 11 장 2 절
+## 이계미분
 
-### 편미분의 교환법칙
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CAL_commutativity_of_2nd_order_partial_derivatives}
+
+#### 편미분의 교환법칙
 
 $n$-공간의 열린 집합 $A$ 에서 정의된 이급함수 $f$ 는 $P\in A$ 에 대하여 다음을 만족한다.
 
 $$
-D_i D_j f(P)=D_j D_i f(P) \qquad (1\le i,\,j \le n)
+\boxed{
+D_i D_j f(P)=D_j D_i f(P) \qquad (1\le i,\,j \le n).
+}
 $$
 
+:::
+
+</div>
 
 ::: {.proof}
 
@@ -317,7 +329,11 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+### 연습문제 
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CAL_11_2_1} 
 
@@ -565,7 +581,7 @@ $$
 
 #### SNU 11.2.8
 
-라플라스 방정식 $\nabla^2 f$ 를 만족시키는 함수를 **조화함수**라고 한다. 다음 함수들이 조화함수임을 보이라.
+라플라스 방정식 $\nabla^2 f=0$ 를 만족시키는 함수를 **조화함수**라고 한다. 다음 함수들이 조화함수임을 보이라.
 
 :::
 
@@ -628,7 +644,7 @@ $\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2$ �
 $$
 \begin{aligned}
 \left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2 &=\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right) \\
-&= \left(\dfrac{\partial}{\partial x}\right)^2+ \dfrac{\partial }{\partial y}+x\dfrac{\partial^2}{\partial x \partial y}+ x \dfrac{\partial^2 }{\partial y \partial x} + x^2 \left(\dfrac{\partial}{\partial y}\right)^2
+&= \left(\dfrac{\partial}{\partial x}\right)^2 + \dfrac{\partial }{\partial y} + x \dfrac{\partial^2}{\partial x \partial y}+ x \dfrac{\partial^2 }{\partial y \partial x} + x^2 \left(\dfrac{\partial}{\partial y}\right)^2
 \end{aligned}
 $$
 
@@ -699,7 +715,7 @@ $$
 \dfrac{\partial^2 f}{\partial x \partial y} (0,\,0) \ne \dfrac{\partial^2 f}{\partial y \partial x} (0,\,0)
 $$
 
-임을 보이라. 이때 왜 오일러의 편미분 교환법칙 (2.0.2) 가 성립하지 않는 지를 설명하라.
+임을 보이라. 이때 왜 오일러의 편미분 교환법칙 (@thm-CAL_commutativity_of_2nd_order_partial_derivatives) 가 성립하지 않는 지를 설명하라.
 
 :::
 
@@ -825,7 +841,7 @@ $$
 
 #### SNU 11.2.13 
 
-함수 $f(x_1,\ldots,\, x_n)$ 이 $k$ 급 함수이면, 임의의 벡터 $\bf{v} = \sum_{i=1}^n v_i \bf{e}_i$ 에 대하여
+함수 $f(x_1,\ldots,\, x_n)$ 이 $k$ 급 함수이면, 임의의 벡터 $\displaystyle\bf{v} = \sum_{i=1}^n v_i \bf{e}_i$ 에 대하여
 
 $$
 {D_{\bf{v}}}^k f = \sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k}D_{i_1}\cdots D_{i_k}f
@@ -856,14 +872,25 @@ $$
 
 </br>
 
-## 정리 3.0.3  다변수 함수의 테일러 전개
+## 테일러 전개와 근사값 이론
 
-$n$-공간의 열린 집합 $U$ 에서 정의된 $k$-번 미분가능한 함수 $f$ 가 주어졌다고 하자. 이 때 $U$ 의 한 점 $P$ 와 벡터 $\bf{v}$ 에 대하여 선분 $[P,\, P+\bf{v}] : = \{P+t\bf{v}: 0\le t \le 1\}$ 이 $U$에 포함된다고 하자. 그러면
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CAL_tayler_series}
+
+$n$-공간의 열린 집합 $U$ 에서 정의된 $k$-번 미분가능한 함수 $f$ 가 주어졌다고 하자. 이 때 $U$ 의 한 점 $P$ 와 벡터 $\bf{v}$ 에 대하여 선분 $[P,\, P+\bf{v}] : = \{P+t\bf{v}: 0\le t \le 1\}$ 이 $U$ 에 포함된다고 하자. 그러면
 $$
-f(P+\bf{v})=f(P)+D_{\bf{v}}f(P)+ \dfrac{1}{2!}{D_{\bf{v}}}^2 f{P}+ \cdots \dfrac{1}{(k-1)!}{D_{\bf{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\bf{v}}}^k f(P+t^\ast \bf{v})
-$$
+\begin{aligned}
+f(P+\bf{v}) &= f(P) + D_{\bf{v}} f(P)+ \dfrac{1}{2!} {D_{\bf{v}}}^2 f(P) + \cdots \\[0.3em]
+&\qquad +\dfrac{1}{(k-1)!}{D_{\bf{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\bf{v}}}^k f(P+t^\ast \bf{v})
+\end{aligned}
+$$ {#eq-CAL_taylor_series}
+
 를 만족시키는 $t^\ast$ 가 $0$ 과 $1$ 사이에 존재한다.
 
+:::
+
+</div>
 
 ::: {.proof}
 
@@ -889,9 +916,10 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-### 정리 3.2.2 테일러 전개의 유일성
+::: {#thm-CAL_uniqueness_of_tayler_series}
+
 
 $n$ 공간의 한 점 $P$ 근방에서 정의된 $k$ 번 미분가능한 함수 $f$ 와 $g$ 에 대하여, $\bf{x}$ 에 대한 함수 $f(P+\bf{x})$ 와 $g(P+\bf{x})$ 의 차가 $o(|\bf{x}|^k)$ 이면
 $$
@@ -899,6 +927,9 @@ T_k f(P,\,\bf{x})=T_k g(P,\,\bf{x})
 $$
 이다.
 
+:::
+
+</div>
 ::: {.proof}
 
 $$
@@ -925,7 +956,7 @@ $\square$
 
 </br>
 
-## 연습문제 : 제 11 장 3 절
+### 연습문제 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1458,7 +1489,9 @@ $$
 
 </br>
 
-## 연습문제 : 제 11 장 4 절
+## 임계점 정리
+
+### 연습문제
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1576,21 +1609,28 @@ $$
 
 함수 $f(x,\,y)=3x^4-4x^2y+y^2=(3x^2-y)(x^2-y)$ 에 대하여,
 
+($1$) 원점이 $f$ 의 임계점임을 보이라.
+
+($2$) 임의의 단위벡터 $\bf{v}=(h,\,k)$ 에 대하여, 함수 $g(t):=f(t\bf{v})=f(th,\,tk)$ 는 $t=0$ 에서 극소임을 보이라.
+
+($3$) 그럼에도 불구하고 원점은 $f$ 의 극소점이 아님을 보이라.
+
+($4$) 곡선 $f(x,\,y)=0$ 을 도시하라.
+
+($5$) $f(x,\,y)>0,\, f(x,\,y)<0$ 인 영역을 각각 그리라.
+
+($6$) ($2$) 와 ($3$) 이 서로 모순되지 않는 이유를 설명하라.
 :::
 
 </div>
 
 ::: {.solution}
 
-($1$) 원점이 $f$ 의 임계점임을 보이라.
-
-$$
-\nabla f(x,\,y)= (12x^3-8xy,\, -4x^2+2y)
-$$
+($1$) $\nabla f(x,\,y)= (12x^3-8xy,\, -4x^2+2y)$.
 
 이므로 $\nabla f(0,\,0)=(0,\,0)$
 
-($2$) 임의의 단위벡터 $\bf{v}=(h,\,k)$ 에 대하여, 함수 $g(t):=f(t\bf{v})=f(th,\,tk)$ 는 $t=0$ 에서 극소임을 보이라.
+($2$) 
 
 $$
 \begin{aligned}
@@ -1601,21 +1641,15 @@ $$
 
 이다. $k\ne 0$ 이면  $g''(0)=2k^2>0$ 이므로 $g(0)$ 은 극소점이며, $k=0$ 이면 $g(t)=3h^4t^4$ 이므로 역시 $t=0$ 이 극소점이다.
 
-($3$) 그럼에도 불구하고 원점은 $f$ 의 극소점이 아님을 보이라.
+($3$) $f(t,\,2t^2)=(3t^2-2t^2)(t^2-2t^2)=-t^4$ 이므로 $t=0$ 은 $f(t,\,2t^2)$ 의 극대점이다. 따라서 $f(t)$ 의 극소점이 될 수 없다.
 
-$f(t,\,2t^2)=(3t^2-2t^2)(t^2-2t^2)=-t^4$ 이므로 $t=0$ 은 $f(t,\,2t^2)$ 의 극대점이다. 따라서 $f(t)$ 의 극소점이 될 수 없다.
+($4$) $y=3x^2$ or $y=x^2$ 이다.
 
-($4$) $곡선 $f(x,\,y)=0$ 을 도시하라.
-
-$y=3x^2$ or $y=x^2$ 이다.
-
-($5$) $f(x,\,y)>0,\, f(x,\,y)<0$ 인 영역을 각각 그리라.
+($5$) 
 
 ![ex_11_4_3](figures/ex_11_4_3.png)
 
-($6$) ($2$) 와 ($3$) 이 서로 모순되지 않는 이유를 설명하라.
-
-$- \to 0 \to -$​, $+ \to 0 \to +$​ 를 생각해보라.
+($6$) $- \to 0 \to -$​, $+ \to 0 \to +$​ 를 생각해보라.
 
 :::
 
@@ -1708,7 +1742,10 @@ $$
 
 </br>
 
-## 연습문제 : 제 11 장 5 절
+## 헤세판정법
+
+### 연습문제
+
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1844,14 +1881,17 @@ $$
 즉 $\theta = -\dfrac{1}{2} \tan^{-1}\left(\dfrac{2b}{a-c}\right)$ 만큼 회전이동하면 $x'y'$ 항이 없어진다.
 
 $$
-q(x',\,y') = (a\cos^2\theta -2b \cos \theta \sin \theta+c\sin^2 \theta) x'^2 + (a\sin^2\theta +2b \cos \theta \sin \theta+c\cos^2 \theta) y'^2
+\begin{aligned}
+q(x',\,y') &= (a\cos^2\theta -2b \cos \theta \sin \theta+c\sin^2 \theta) x'^2 \\[0.3em]
+&\quad + (a\sin^2\theta +2b \cos \theta \sin \theta+c\cos^2 \theta) y'^2
+\end{aligned}
 $$
 
 이 된다. $f(x,\,y) = ax^2+by^2$ 꼴의 함수의 등위면은, 두 계수의 곱이 양수이면 등위면은 타원이며, 음수이면 쌍곡선임을 안다. 따라서
 
 $$
 \begin{aligned}
-[\text{prod. of coeffs}] = &(a\cos^2\theta -2b \cos \theta \sin \theta+c\sin^2 \theta)  (a\sin^2\theta +2b \cos \theta \sin \theta+c\cos^2 \theta)  \\
+{}[\text{prod. of coeffs}] = &(a\cos^2\theta -2b \cos \theta \sin \theta+c\sin^2 \theta)  (a\sin^2\theta +2b \cos \theta \sin \theta+c\cos^2 \theta)  \\
 =&a^2 \cos^2\theta \sin^2 \theta + 2ab(\cos^3 \theta \sin\theta - \cos \theta\sin^3 \theta) + ac(\cos^4 \theta + \sin^4 \theta) \\
 &\qquad - 4b^2 \cos^2 \theta \sin^2 \theta + 2bc(\cos \theta \sin^3 \theta - \cos^3 \theta \sin \theta) + c^2 \cos^2\theta \sin^2 \theta \\
 =&(a^2+c^2 - 4b^2) \cos^2\theta \sin^2 \theta   + 2ab\cos \theta \sin\theta(\cos^2 \theta - \sin^2 \theta) \\
@@ -1883,7 +1923,7 @@ $$
 
 #### SNU 11.5.6  
 
-$n$ 공간의 점 $P$ 근방에서 정의된 이급함수 $f$ 와 벡터 $\bf{v}=v_1\bf{e}_1 + \cdots + v_n \bf{e}_n$ 에 대하여
+$n$-공간의 점 $P$ 근방에서 정의된 이급함수 $f$ 와 벡터 $\bf{v}=v_1\bf{e}_1 + \cdots + v_n \bf{e}_n$ 에 대하여
 
 $$
 {D_{\bf{v}}}^2 f(P) = \sum_{i,\,j=1}^n v_i v_j D_i D_j f(P) = \bf{v} \cdot (f''(P)\bf{v})
@@ -1946,7 +1986,11 @@ $$
 
 ## 라그랑즈 승수법
 
-### 정리 6.0.1 (라그랑즈 승수법)
+### 라그랑즈 승수법
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CAL_lagrange_multiplier_method}
 
 $n$ 공간의 열린 집합 $U$ 에서 정의된 일급함수 $f,\,g$ 에 대하여 함수 $f$ 를 초곡면
 
@@ -1968,6 +2012,10 @@ $$
 
 를 만족시키는 실수 $\lambda$ 가 존재한다.
 
+:::
+
+</div>
+
 ::: {.proof}
 
 ($1$) $\nabla g(P)=\bf{0}$  이면 $\nabla f(P)$ 와 $\nabla g(P)$ 는 일차종속이므로 $\nabla g(P)\ne \bf{0}$ 일 때만 생각한다.
@@ -1986,9 +2034,11 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-### 라그랑주 승수법의 응용 : 산술평균과 기하평균
+::: {#exm-CAL_lagrange_multiplier_example_1}
+
+#### 산술평균과 기하평균
 
 $$
 g(x_1,\ldots,\,g_n):=x_1+\cdots +x_n=1 ,\qquad x_1\ge 0,\ldots,\, x_n\ge 0
@@ -2002,32 +2052,37 @@ $$
 
 의 최대값을 구해보자.
 
-::: {.solution}
-
 우선 $0\le x_1,\ldots,\,x_n \le 1$ 임을 안다. 이 영역을 $K$ 라 하자. 주어진 영역은 유계인 닫힌집합이고 $f$ 는 연속함수이므로 $f$ 는 최대값을 가진다.  $P=(p_1,\ldots,\,p_n)\in K$ 에서 극값을 갖는다고 하자. 라그랑즈 승수법에 의해
 
 $$
 \begin{aligned}
-\nabla f(P)&=(p_2\cdots p_n,\, p_1p_3 \cdots p_n,\cdots,\, p_1\cdots p_{n-1})\\
+\nabla f(P)&=(p_2\cdots p_n,\, p_1p_3 \cdots p_n,\cdots,\, p_1\cdots p_{n-1})\\[0.3em]
 \nabla g(P) &= (1,\ldots,\, 1)
 \end{aligned}
 $$
 
-로부터 $\nabla f(P)=\lambda\nabla g(P)$ 이므로, $p_1=\cdots =p_n=\frac{1}{n}$ 을 얻는다.  $Q_i $ 를 $x_i=1$, $x_1=\cdots =x _{i-1}=x_{i+1}=\cdots =x_n=0$ 인 point 라 했을 때 $f(Q_i)=0$ 이며 $f(P)>1$ 이므로 $f$ 는 $P$ 에서 최대값을 가지며 이 때의 최대값은 $\dfrac{1}{n^n}$ 이다.
+로부터 $\nabla f(P)=\lambda\nabla g(P)$ 이므로, $p_1=\cdots =p_n=\frac{1}{n}$ 을 얻는다.  $Q_i$ 를 $x_i=1$, $x_1=\cdots =x _{i-1}=x_{i+1}=\cdots =x_n=0$ 인 점이라 했을 때 $f(Q_i)=0$ 이며 $f(P)>1$ 이므로 $f$ 는 $P$ 에서 최대값을 가지며 이 때의 최대값은 $\dfrac{1}{n^n}$ 이다.
 
 이 식으로부터 모두 $0$ 이 아닌 임의의 양의 실수 $a_1,\ldots,\, a_n$ 에 대해 $S=\displaystyle\sum_{i=1}^n a_n$ 이라 하면 $0\le \dfrac{a_i}{S} \le 1$ 이므로,
 
 $$
-\dfrac{a_1}{S}  \cdots  \dfrac{a_n}{S} = \dfrac{a_1\cdots a_n }{S^n}\le \left(\dfrac{1}{n^n}\right) \implies a_1 \cdots a_n \le \left(\dfrac{S}{n}\right)^n  \implies (a_1\cdots a_n)^{1/n} \le \dfrac{a_1+\cdots +a_n}{n}
+\begin{aligned}
+\dfrac{a_1}{S}  \cdots  \dfrac{a_n}{S} = \dfrac{a_1\cdots a_n }{S^n}\le \left(\dfrac{1}{n^n}\right) &\implies a_1 \cdots a_n \le \left(\dfrac{S}{n}\right)^n  \\[0.3em]
+& \implies (a_1\cdots a_n)^{1/n} \le \dfrac{a_1+\cdots +a_n}{n}
+\end{aligned}
 $$
 
 을 얻으며 등호는 $a_1=\cdots =a_n$ 일 때만 성립한다.
 
 :::
 
-</br>
+</div>
 
-### 라그랑즈 승수법의 응용 : 산술평균과 이차평균
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CAL_lagrange_multiplier_example_2}
+
+#### 산술평균과 이차평균
 
 $$
 g(x_1,\ldots,\,x_n):={x_1}^2+ \cdots + {x_n}^2 = 1,\qquad x_1\ge 0,\ldots,\,x_n \ge 0
@@ -2041,7 +2096,7 @@ $$
 
 의 최대값을 구해보자.
 
-::: {.solution}
+
 
 역시 $0\le x_1 ,\ldots,\,x_n \le 1$ 이므로 유계인 닫힌 집합에서 정의되었으므로 연속함수 $f$ 는 최대값과 최소값을 가진다.
 
@@ -2076,9 +2131,9 @@ $$
 
 :::
 
-</br>
+</div></br>
 
-## 연습문제 : 제 11 장 6 절
+### 연습문제 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -2250,7 +2305,13 @@ $n=1$ 일 때는 자명하므로 $n\ge 2$ 일 경우만 생각한다.
 
 ($1$) $x_i \ge 0, \;\forall i=1,\ldots,\,n$ 에 대해 $g(X) = x_1^p + \cdots + x_n^p = 1$ 일 때 $f(X) = x_1^q + \cdots + x_n^q$ 의 최대값을 구해보자. $q>p>0$ 이므로 $0 \le x_i \le 1,\;\forall i=1,\ldots,n$ 이어야 한다. 두개 이상의 $x_i\ne 0$ 이라면 $1$ 보다 작으므로 이 $(x_i)^p<(x_i)^q$ 이다. 즉 $f(X)<1$ 이다. 하나의 $x_i$ 만 $0$ 이 아니라면 그 $x_i = 1$ 이므로 $f(X)$ 의 최대값은 $1$ 이다. 즉 $g(X)=1$ 일 때 $f(X)\le 1$ 이다.
 
-$A = (a_1,\ldots,\,a_n)$ 에 대해 $x_i = \dfrac{a_i}{(\sum_j (a_j)^p)^{1/p}}$ 라 하면 $x_1^p + \cdots + x_n^p = 1$ 이므로
+$A = (a_1,\ldots,\,a_n)$ 에 대해 
+
+$$
+x_i = \dfrac{a_i}{\left(\sum_j (a_j)^p\right)^{1/p}}
+$$ 
+
+라 하면 $x_1^p + \cdots + x_n^p = 1$ 이므로
 
 $$
 \begin{aligned}
@@ -2392,7 +2453,7 @@ $\nabla d=\lambda \nabla g$ 이면 $x-1=\lambda x,\, y-2=\lambda y,\, z=-\lambda
 
 $n$ 차 대칭행렬 $Q=(q_{ij})$ 와 $X=\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}$ 에 대하여, 이차형식은
 $$
-q(X)= X \cdot QX = \sum_{i,\,j=1}^n q_{ij}x_i x_j = \sum_{i=1}^n q_{ii}x_i^2 + 2\sum_{i<j} q_{ij}x_i x_j
+q(X) := X \cdot QX = \sum_{i,\,j=1}^n q_{ij}x_i x_j = \sum_{i=1}^n q_{ii}x_i^2 + 2\sum_{i<j} q_{ij}x_i x_j
 $$
 
 로 주어진다. 이때 $q$ 의 기울기 벡터는 $\nabla q(X)=2QX$ 임을 보이라. 또 $q$ 를 단위 구면 $S: x_1^2+\cdots + x_n^2=1$ 에서 제한하였을 때, 최대점에서는 $QX=\lambda X$ 를 만족시키는 실수 $\lambda$ 가 존재함을 보이라.
@@ -2411,8 +2472,8 @@ $$
 
 $$
 \begin{aligned}
-\nabla q(X) &= 2QX \\
-\nabla g(X) &= 2(x_1,\ldots,\,x_n) =2X
+\nabla q(X) &= 2QX \\[0.3em]
+\nabla g(X) &= 2X
 \end{aligned}
 $$
 
@@ -2533,7 +2594,7 @@ $$
 
 </br>
 
-## 제 11장 탐구문제
+## 탐구문제
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 

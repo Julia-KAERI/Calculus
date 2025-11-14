@@ -7,13 +7,13 @@ crossref:
 ---
 
 
-## 연습문제 : 제 12 장 1 절
+## 야코비 행렬
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CAL_12_1_1} 
 
-#### SNU 탐구문제 12.1.1
+#### SNU 12.1.1
 
 구면좌표 변환의 부피 변화율이 야코비 행렬식과 일치함을 보이라.
 
@@ -29,7 +29,7 @@ $$
 \rho_0 \le \rho \le \rho_0 + \Delta\rho,\qquad \varphi_0 \le \varphi\le \varphi_0+\Delta \varphi,\qquad \theta_0 \le \theta \le \theta_0 +\Delta \theta
 $$
 
-가 구면좌표변환에 의하여 부피의 변화가 어떻게 변하는지 보면 된다. 일단 고정된 $\rho$ 에서의 면적의 변화를 보면 $\varphi$ 방향으로는 $\rho \Delta \varphi $ 이며 $\theta$ 방향으로는 $\rho\sin \varphi \Delta \theta$ 이므로 면벅의 변화는 $\rho^2 \sin \varphi \Delta \varphi \Delta \theta$ 이다.
+가 구면좌표변환에 의하여 부피의 변화가 어떻게 변하는지 보면 된다. 일단 고정된 $\rho$ 에서의 면적의 변화를 보면 $\varphi$ 방향으로는 $\rho \Delta \varphi$ 이며 $\theta$ 방향으로는 $\rho\sin \varphi \Delta \theta$ 이므로 면벅의 변화는 $\rho^2 \sin \varphi \Delta \varphi \Delta \theta$ 이다.
 
 부피의 변화 $\Delta V$ 는
 
@@ -76,17 +76,32 @@ $$
 
 </br>
 
-## 제 2 절 : 역함수 정리와 음함수 정리
+## 역함수 정리와 음함수 정리
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CAL_derivative_of_inverse_function}
+
 
 ### 미분가능한 역함수와 역함수의 미분
 
 $F: X \subset \mathbb{R}^n \to Y\subset \mathbb{R}^n$ 에 대한 역함수 $G:Y \to X$ 가 존재한며 $G$ 가 미분가능하면 $G'(Y)=\left(F'(X)\right)^{-1}$ 이다.
 
----
+:::
+
+</div>
+
+::: {.proof}
 
 $$
-G(F(X))=X \implies G'(Y)F'(X)=I \implies G'(Y)=\left(F'(X)\right)^{-1}
+G(F(X))=X \implies G'(Y)F'(X)=I \implies G'(Y)=\left(F'(X)\right)^{-1}. \square
 $$
+
+:::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CAL_inverse_function_Theorem}
 
 ### 역함수 정리
 
@@ -98,13 +113,21 @@ $$
 
 이다.
 
----
+:::
+
+</div>
+
+::: {.proof}
 
 증명은 해석학 참고
 
-</br>
+:::
 
-### 음함수 정리
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CAL_implicit_functino_theorem}
+
+#### 음함수 정리
 
 일급함수 $f(x_1,\ldots,\,x_n,\,y)$ 의 등위면 $f^{-1}(c)$ 의 한 점 $P_0:=(X_0,\,y_0)=(x_1^0,\ldots,\,x_n^0,\,y_0)$ 에서
 
@@ -126,7 +149,11 @@ $$
 
 이다.
 
----
+::: 
+
+</div>
+
+::: {.proof}
 
 $n=1$ 인 경우만 다룬다. $n\ge 2$ 의 증명은 유사하다. $F(x,\,y)=(x,\,f(x,\,y))$  의 야코비 행렬
 
@@ -150,15 +177,17 @@ $$
 
 이다.
 
+:::
+
 </br>
 
-## 연습문제 : 제 12 장 2 절
+### 연습문제
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CAL_12_2_1} 
 
-#### SNU 탐구문제 12.2.1
+#### SNU 12.2.1
 
 사상
 $$
@@ -174,7 +203,7 @@ $$
 ::: {.solution}
 
 $$
-F'(x,\,y)= \begin{bmatrix} 3x^2-3y^2 & -6xy \\ 6xy & 3x^2-3y^2\end{bmatrix},\qquad \det F'=9(x^2+y^2)^2
+F'(x,\,y)= \begin{bmatrix} 3x^2-3y^2 & -6xy \\ 6xy & 3x^2-3y^2\end{bmatrix},\qquad \det (F')=9(x^2+y^2)^2
 $$
 
 이므로 $(x,\,y)\ne (0,\,0) \iff \det F'\ne 0$ 이다. 따라서 $(x,\,y)\ne (0,\,0)$ 일 때 $F$ 는 국소적으로 가역사상이다.
@@ -189,7 +218,7 @@ $$
 
 ::: {#exr-CAL_12_2_2} 
 
-#### SNU 탐구문제 12.2.2 
+#### SNU 12.2.2 
 
 다음 함수들이 주어진 점에서 국소적으로 일급가역인가를 조사하라.
 
@@ -224,7 +253,7 @@ $$
 
 ::: {#exr-CAL_12_2_3} 
 
-#### SNU 탐구문제 12.2.3 
+#### SNU 12.2.3 
 
 $f(x,\,y):=(x-2)^2y-xe^y$ 일 때
 
@@ -252,7 +281,7 @@ $$
 
 ::: {#exr-CAL_12_2_4} 
 
-#### SNU 탐구문제 12.2.4 
+#### SNU 12.2.4 
 
 다음 함수 $f$ 에 대하여 식 $f(x,\,y)=0$ 으로 주어진 등위선은 점 $(x_0,\,y_0)$ 근방에서 함수 $y=g(x)$ 의 그래프로 나타남을 설명하고, 이때 미분계수 $g'(x_0)$ 를 구하라.
 
@@ -290,7 +319,7 @@ $$
 
 $\partial_y f(x_0,\,y_0)= 3\ne 0$, $\partial_x f(x_0,\,y_0)=1$ 이므로 $g(1)= -\frac{1}{3}$ 이다.
 
-($4$) $ f(x,\,y)=x+y+x\sin y,\qquad (x_0,\,y_0)=(0,\,0)$
+($4$) $f(x,\,y)=x+y+x\sin y,\qquad (x_0,\,y_0)=(0,\,0)$
 
 $\partial_y f(0,\,0)= 1 \ne 0,\, \partial_x f(0,\,0)= 1$ 이므로 $g(1)=-1$ 이다.
 
@@ -301,7 +330,7 @@ $\partial_y f(0,\,0)= 1 \ne 0,\, \partial_x f(0,\,0)= 1$ 이므로 $g(1)=-1$ 이
 
 ::: {#exr-CAL_12_2_5} 
 
-#### SNU 탐구문제 12.2.5 
+#### SNU 12.2.5 
 
 다음 함수 $f$ 에 대하여 식 $f(x,\,y,\,z)=0$ 으로 주어진 등위면은 주어진 점 $(x_0,\,y_0,\,z_0)$ 근방에서 함수$z=g(x,\,y)$ 의 그래프로 나타남을 설명하고, 이때 미분계수 $D_1 g(x_0,\,y_0)$ 와 $D_2 g(x_0,\,y_0)$ 를 구하라.
 
@@ -323,7 +352,7 @@ $\partial_z f(x_0,\,y_0,\,z_0)= 1 \ne 0$ 이므로 $(x_0,\,y_0,\,z_0)$ 근처에
 
 ::: {#exr-CAL_12_2_6} 
 
-#### SNU 탐구문제 12.2.6 
+#### SNU 12.2.6 
 
 식
 
@@ -347,7 +376,7 @@ $f(x,\,y)=xe^y-y+1$ 일 때 $\partial_y f(e^{-2},\, 2)= 0$ 이므로 함수의 �
 
 ::: {#exr-CAL_12_2_7} 
 
-#### SNU 탐구문제 12.2.7 
+#### SNU 12.2.7 
 
 좌표평면에서 정의된 함수 $z=f(x,\,y)$ 가 식
 
@@ -373,7 +402,7 @@ $\partial_z g(1,\,1,\,1)=6\ne 0$ 이다. $g_x (1,\,1,\,1)= g_y (1,\,1,\,1)=1$ �
 
 ::: {#exr-CAL_12_2_8} 
 
-#### SNU 탐구문제 12.2.8 
+#### SNU 12.2.8 
 
 방정식
 
@@ -409,7 +438,7 @@ $$
 
 ::: {#exr-CAL_12_2_9} 
 
-#### SNU 탐구문제 12.2.9 
+#### SNU 12.2.9 
 
 방정식
 
@@ -442,7 +471,7 @@ $$
 
 ::: {#exr-CAL_12_2_10} 
 
-#### SNU 탐구문제 12.2.10 
+#### SNU 12.2.10 
 
 다음 주장에서 잘못된 곳을 가려라
 
@@ -472,7 +501,7 @@ $$
 
 ::: {#exr-CAL_12_2_11} 
 
-#### SNU 탐구문제 12.2.11 
+#### SNU 12.2.11 
 
 $(x,\,y)$ 에 대한 함수 $z$ 가 식 $x^3-2y^2+z^2=0$ 을 만족시킬 때, $\dfrac{\partial z}{\partial x}(1,\,1)$ 과 $\dfrac{\partial z}{\partial y}(1,\,1)$ 을 구하라.
 
@@ -499,7 +528,7 @@ $$
 
 ::: {#exr-CAL_12_2_12} 
 
-#### SNU 탐구문제 12.2.12 
+#### SNU 12.2.12 
 
 $y^5+3x^2y^3-7x^6-8=0$ 일 때 $\dfrac{dy}{dx}(0)$ 을 구하라.
 
@@ -529,7 +558,7 @@ $$
 
 ::: {#exr-CAL_12_2_13} 
 
-#### SNU 탐구문제 12.2.13 
+#### SNU 12.2.13 
 
 만약 $n$ 차 정사각행렬 $A$ 가 항등행렬 $I$ 에 아주 가까우면, $e^X=A$ 가 되는 정사각행렬 $X$ 가 존재함을 설명하라. 이때 임의의 자연수 $k$ 에 대하여 $Y^k=A$ 가 되는 정사각행렬 $Y$ 가 존재함을 보이라.
 

@@ -256,14 +256,11 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#연습문제-제-12-장-1-절" id="toc-연습문제-제-12-장-1-절" class="nav-link active" data-scroll-target="#연습문제-제-12-장-1-절"><span class="header-section-number">12.1</span> 연습문제 : 제 12 장 1 절</a></li>
-  <li><a href="#제-2-절-역함수-정리와-음함수-정리" id="toc-제-2-절-역함수-정리와-음함수-정리" class="nav-link" data-scroll-target="#제-2-절-역함수-정리와-음함수-정리"><span class="header-section-number">12.2</span> 제 2 절 : 역함수 정리와 음함수 정리</a>
+  <li><a href="#야코비-행렬" id="toc-야코비-행렬" class="nav-link active" data-scroll-target="#야코비-행렬"><span class="header-section-number">12.1</span> 야코비 행렬</a></li>
+  <li><a href="#역함수-정리와-음함수-정리" id="toc-역함수-정리와-음함수-정리" class="nav-link" data-scroll-target="#역함수-정리와-음함수-정리"><span class="header-section-number">12.2</span> 역함수 정리와 음함수 정리</a>
   <ul class="collapse">
-  <li><a href="#미분가능한-역함수와-역함수의-미분" id="toc-미분가능한-역함수와-역함수의-미분" class="nav-link" data-scroll-target="#미분가능한-역함수와-역함수의-미분"><span class="header-section-number">12.2.1</span> 미분가능한 역함수와 역함수의 미분</a></li>
-  <li><a href="#역함수-정리" id="toc-역함수-정리" class="nav-link" data-scroll-target="#역함수-정리"><span class="header-section-number">12.2.2</span> 역함수 정리</a></li>
-  <li><a href="#음함수-정리" id="toc-음함수-정리" class="nav-link" data-scroll-target="#음함수-정리"><span class="header-section-number">12.2.3</span> 음함수 정리</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">12.2.1</span> 연습문제</a></li>
   </ul></li>
-  <li><a href="#연습문제-제-12-장-2-절" id="toc-연습문제-제-12-장-2-절" class="nav-link" data-scroll-target="#연습문제-제-12-장-2-절"><span class="header-section-number">12.3</span> 연습문제 : 제 12 장 2 절</a></li>
   </ul>
 </nav>
     </div>
@@ -289,11 +286,11 @@ window.Quarto = {
 </header>
 
 
-<section id="연습문제-제-12-장-1-절" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="연습문제-제-12-장-1-절"><span class="header-section-number">12.1</span> 연습문제 : 제 12 장 1 절</h2>
+<section id="야코비-행렬" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="야코비-행렬"><span class="header-section-number">12.1</span> 야코비 행렬</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_1_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.1 (SNU 탐구문제 12.1.1)</strong></span> 구면좌표 변환의 부피 변화율이 야코비 행렬식과 일치함을 보이라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.1 (SNU 12.1.1)</strong></span> 구면좌표 변환의 부피 변화율이 야코비 행렬식과 일치함을 보이라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -301,7 +298,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \rho_0 \le \rho \le \rho_0 + \Delta\rho,\qquad \varphi_0 \le \varphi\le \varphi_0+\Delta \varphi,\qquad \theta_0 \le \theta \le \theta_0 +\Delta \theta
 \]</span></p>
-<p>가 구면좌표변환에 의하여 부피의 변화가 어떻게 변하는지 보면 된다. 일단 고정된 <span class="math inline">\(\rho\)</span> 에서의 면적의 변화를 보면 <span class="math inline">\(\varphi\)</span> 방향으로는 $$ 이며 <span class="math inline">\(\theta\)</span> 방향으로는 <span class="math inline">\(\rho\sin \varphi \Delta \theta\)</span> 이므로 면벅의 변화는 <span class="math inline">\(\rho^2 \sin \varphi \Delta \varphi \Delta \theta\)</span> 이다.</p>
+<p>가 구면좌표변환에 의하여 부피의 변화가 어떻게 변하는지 보면 된다. 일단 고정된 <span class="math inline">\(\rho\)</span> 에서의 면적의 변화를 보면 <span class="math inline">\(\varphi\)</span> 방향으로는 <span class="math inline">\(\rho \Delta \varphi\)</span> 이며 <span class="math inline">\(\theta\)</span> 방향으로는 <span class="math inline">\(\rho\sin \varphi \Delta \theta\)</span> 이므로 면벅의 변화는 <span class="math inline">\(\rho^2 \sin \varphi \Delta \varphi \Delta \theta\)</span> 이다.</p>
 <p>부피의 변화 <span class="math inline">\(\Delta V\)</span> 는</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -333,30 +330,35 @@ G'(x,\,y) &amp;= \begin{pmatrix} 3x^2-y^2 &amp; -2xy \\ 2xy &amp; x^2-3y^2 \end{
 </div>
 <p><br></p>
 </section>
-<section id="제-2-절-역함수-정리와-음함수-정리" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="제-2-절-역함수-정리와-음함수-정리"><span class="header-section-number">12.2</span> 제 2 절 : 역함수 정리와 음함수 정리</h2>
-<section id="미분가능한-역함수와-역함수의-미분" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="미분가능한-역함수와-역함수의-미분"><span class="header-section-number">12.2.1</span> 미분가능한 역함수와 역함수의 미분</h3>
-<p><span class="math inline">\(F: X \subset \mathbb{R}^n \to Y\subset \mathbb{R}^n\)</span> 에 대한 역함수 <span class="math inline">\(G:Y \to X\)</span> 가 존재한며 <span class="math inline">\(G\)</span> 가 미분가능하면 <span class="math inline">\(G'(Y)=\left(F'(X)\right)^{-1}\)</span> 이다.</p>
-<hr>
-<p><span class="math display">\[
-G(F(X))=X \implies G'(Y)F'(X)=I \implies G'(Y)=\left(F'(X)\right)^{-1}
+<section id="역함수-정리와-음함수-정리" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="역함수-정리와-음함수-정리"><span class="header-section-number">12.2</span> 역함수 정리와 음함수 정리</h2>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CAL_derivative_of_inverse_function" class="theorem">
+<p><span class="theorem-title"><strong>정리 12.1 (미분가능한 역함수와 역함수의 미분)</strong></span> <span class="math inline">\(F: X \subset \mathbb{R}^n \to Y\subset \mathbb{R}^n\)</span> 에 대한 역함수 <span class="math inline">\(G:Y \to X\)</span> 가 존재한며 <span class="math inline">\(G\)</span> 가 미분가능하면 <span class="math inline">\(G'(Y)=\left(F'(X)\right)^{-1}\)</span> 이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
+G(F(X))=X \implies G'(Y)F'(X)=I \implies G'(Y)=\left(F'(X)\right)^{-1}. \square
 \]</span></p>
-</section>
-<section id="역함수-정리" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="역함수-정리"><span class="header-section-number">12.2.2</span> 역함수 정리</h3>
-<p><span class="math inline">\(n\)</span> 공간의 한 열린 집합에서 정의된 일급사상 <span class="math inline">\(F:U\subset \mathbb{R}^n\to \mathbb{R}^n\)</span> 을 생각하자. <span class="math inline">\(X_0 \in U\)</span> 에 대해 <span class="math inline">\(F'(X_0)\)</span> 가 가역행렬이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(X_0\)</span> 의 어떤 근방에서 국소적으로 일급가역이다. 이 때 <span class="math inline">\(F\)</span> 의 국소 역사상을 <span class="math inline">\(G\)</span> 라 하고 <span class="math inline">\(Y_0=F(X_0)\)</span> 라 하면</p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CAL_inverse_function_Theorem" class="theorem">
+<p><span class="theorem-title"><strong>정리 12.2 (역함수 정리)</strong></span> <span class="math inline">\(n\)</span> 공간의 한 열린 집합에서 정의된 일급사상 <span class="math inline">\(F:U\subset \mathbb{R}^n\to \mathbb{R}^n\)</span> 을 생각하자. <span class="math inline">\(X_0 \in U\)</span> 에 대해 <span class="math inline">\(F'(X_0)\)</span> 가 가역행렬이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(X_0\)</span> 의 어떤 근방에서 국소적으로 일급가역이다. 이 때 <span class="math inline">\(F\)</span> 의 국소 역사상을 <span class="math inline">\(G\)</span> 라 하고 <span class="math inline">\(Y_0=F(X_0)\)</span> 라 하면</p>
 <p><span class="math display">\[
 G'(Y_0)=(F'(X_0))^{-1}
 \]</span></p>
 <p>이다.</p>
-<hr>
-<p>증명은 해석학 참고</p>
-<p><br></p>
-</section>
-<section id="음함수-정리" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="음함수-정리"><span class="header-section-number">12.2.3</span> 음함수 정리</h3>
-<p>일급함수 <span class="math inline">\(f(x_1,\ldots,\,x_n,\,y)\)</span> 의 등위면 <span class="math inline">\(f^{-1}(c)\)</span> 의 한 점 <span class="math inline">\(P_0:=(X_0,\,y_0)=(x_1^0,\ldots,\,x_n^0,\,y_0)\)</span> 에서</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>증명은 해석학 참고</p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CAL_implicit_functino_theorem" class="theorem">
+<p><span class="theorem-title"><strong>정리 12.3 (음함수 정리)</strong></span> 일급함수 <span class="math inline">\(f(x_1,\ldots,\,x_n,\,y)\)</span> 의 등위면 <span class="math inline">\(f^{-1}(c)\)</span> 의 한 점 <span class="math inline">\(P_0:=(X_0,\,y_0)=(x_1^0,\ldots,\,x_n^0,\,y_0)\)</span> 에서</p>
 <p><span class="math display">\[
 \dfrac{\partial f}{\partial y}(P_0) \ne 0
 \]</span></p>
@@ -369,8 +371,10 @@ y=g(x_1,\ldots,\,x_n)
 \dfrac{\partial g}{\partial x_j}(X_0)=-\dfrac{\partial f}{\partial x_j}(P_0){\huge /}\dfrac{\partial f}{\partial y}(P_0)
 \]</span></p>
 <p>이다.</p>
-<hr>
-<p><span class="math inline">\(n=1\)</span> 인 경우만 다룬다. <span class="math inline">\(n\ge 2\)</span> 의 증명은 유사하다. <span class="math inline">\(F(x,\,y)=(x,\,f(x,\,y))\)</span> 의 야코비 행렬</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(n=1\)</span> 인 경우만 다룬다. <span class="math inline">\(n\ge 2\)</span> 의 증명은 유사하다. <span class="math inline">\(F(x,\,y)=(x,\,f(x,\,y))\)</span> 의 야코비 행렬</p>
 <p><span class="math display">\[
 F'(x,\,y) = \begin{bmatrix} 1 &amp; 0 \\ \partial_x f (x,\,y) &amp; \partial_y f(x,\,y)\end{bmatrix}
 \]</span></p>
@@ -384,14 +388,13 @@ x=g(x,\, f(x,\,y))\qquad y=g_2(x,\, f(x,\,y))
 \partial_j f(X,\, g(X))+\partial_y f(X,\, g(X))\partial_j g(X)=0 \implies \partial_j g(X_0)=-\dfrac{\partial_j f(P_0)}{\partial_y f(P_0)}
 \]</span></p>
 <p>이다.</p>
+</div>
 <p><br></p>
-</section>
-</section>
-<section id="연습문제-제-12-장-2-절" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="연습문제-제-12-장-2-절"><span class="header-section-number">12.3</span> 연습문제 : 제 12 장 2 절</h2>
+<section id="연습문제" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">12.2.1</span> 연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.3 (SNU 탐구문제 12.2.1)</strong></span> 사상 <span class="math display">\[
+<p><span class="theorem-title"><strong>연습문제 12.3 (SNU 12.2.1)</strong></span> 사상 <span class="math display">\[
 (u,\,v):=F(x,\,y)=(x^3-3xy^2,\, 3x^2y-y^3),\qquad (x,\,y)\ne (0,\,0)
 \]</span></p>
 <p>은 국소적으로 가역사상임을 보이라. 이 때 점 <span class="math inline">\((x,\,y)=(1,\,0)\)</span> 에서 역사상 <span class="math inline">\(G(u,\,v)\)</span> 의 미분을 구하라.</p>
@@ -399,7 +402,7 @@ x=g(x,\, f(x,\,y))\qquad y=g_2(x,\, f(x,\,y))
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
-F'(x,\,y)= \begin{bmatrix} 3x^2-3y^2 &amp; -6xy \\ 6xy &amp; 3x^2-3y^2\end{bmatrix},\qquad \det F'=9(x^2+y^2)^2
+F'(x,\,y)= \begin{bmatrix} 3x^2-3y^2 &amp; -6xy \\ 6xy &amp; 3x^2-3y^2\end{bmatrix},\qquad \det (F')=9(x^2+y^2)^2
 \]</span></p>
 <p>이므로 <span class="math inline">\((x,\,y)\ne (0,\,0) \iff \det F'\ne 0\)</span> 이다. 따라서 <span class="math inline">\((x,\,y)\ne (0,\,0)\)</span> 일 때 <span class="math inline">\(F\)</span> 는 국소적으로 가역사상이다.</p>
 <p><span class="math display">\[
@@ -409,7 +412,7 @@ F'(1,\,0)=\begin{bmatrix} 3 &amp; 0 \\ 0 &amp; 3\end{bmatrix}\implies G'(1,\,0)=
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.4 (SNU 탐구문제 12.2.2)</strong></span> 다음 함수들이 주어진 점에서 국소적으로 일급가역인가를 조사하라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.4 (SNU 12.2.2)</strong></span> 다음 함수들이 주어진 점에서 국소적으로 일급가역인가를 조사하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -430,7 +433,7 @@ F'(x,\,y)&amp;=\dfrac{1}{x^2+y^2} \begin{bmatrix} -x^2+y^2 &amp; -2y^2 \\ -2x^2 
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.5 (SNU 탐구문제 12.2.3)</strong></span> <span class="math inline">\(f(x,\,y):=(x-2)^2y-xe^y\)</span> 일 때</p>
+<p><span class="theorem-title"><strong>연습문제 12.5 (SNU 12.2.3)</strong></span> <span class="math inline">\(f(x,\,y):=(x-2)^2y-xe^y\)</span> 일 때</p>
 <p><span class="math display">\[
 f(a,\,b)=0,\qquad D_2 f(a,\,b)=0
 \]</span></p>
@@ -446,7 +449,7 @@ f(a,\,b)=0,\qquad D_2 f(a,\,b)=0
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.6 (SNU 탐구문제 12.2.4)</strong></span> 다음 함수 <span class="math inline">\(f\)</span> 에 대하여 식 <span class="math inline">\(f(x,\,y)=0\)</span> 으로 주어진 등위선은 점 <span class="math inline">\((x_0,\,y_0)\)</span> 근방에서 함수 <span class="math inline">\(y=g(x)\)</span> 의 그래프로 나타남을 설명하고, 이때 미분계수 <span class="math inline">\(g'(x_0)\)</span> 를 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.6 (SNU 12.2.4)</strong></span> 다음 함수 <span class="math inline">\(f\)</span> 에 대하여 식 <span class="math inline">\(f(x,\,y)=0\)</span> 으로 주어진 등위선은 점 <span class="math inline">\((x_0,\,y_0)\)</span> 근방에서 함수 <span class="math inline">\(y=g(x)\)</span> 의 그래프로 나타남을 설명하고, 이때 미분계수 <span class="math inline">\(g'(x_0)\)</span> 를 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -467,13 +470,13 @@ g'(1) = \dfrac{\pi}{2}
 <p>이다.</p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(f(x,\,y) = 2e^{x+y}-x+y,\qquad (x_0,\,y_0)=(1,\,-1)\)</span></p>
 <p><span class="math inline">\(\partial_y f(x_0,\,y_0)= 3\ne 0\)</span>, <span class="math inline">\(\partial_x f(x_0,\,y_0)=1\)</span> 이므로 <span class="math inline">\(g(1)= -\frac{1}{3}\)</span> 이다.</p>
-<p>(<span class="math inline">\(4\)</span>) $ f(x,,y)=x+y+xy,(x_0,,y_0)=(0,,0)$</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(f(x,\,y)=x+y+x\sin y,\qquad (x_0,\,y_0)=(0,\,0)\)</span></p>
 <p><span class="math inline">\(\partial_y f(0,\,0)= 1 \ne 0,\, \partial_x f(0,\,0)= 1\)</span> 이므로 <span class="math inline">\(g(1)=-1\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.7 (SNU 탐구문제 12.2.5)</strong></span> 다음 함수 <span class="math inline">\(f\)</span> 에 대하여 식 <span class="math inline">\(f(x,\,y,\,z)=0\)</span> 으로 주어진 등위면은 주어진 점 <span class="math inline">\((x_0,\,y_0,\,z_0)\)</span> 근방에서 함수<span class="math inline">\(z=g(x,\,y)\)</span> 의 그래프로 나타남을 설명하고, 이때 미분계수 <span class="math inline">\(D_1 g(x_0,\,y_0)\)</span> 와 <span class="math inline">\(D_2 g(x_0,\,y_0)\)</span> 를 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.7 (SNU 12.2.5)</strong></span> 다음 함수 <span class="math inline">\(f\)</span> 에 대하여 식 <span class="math inline">\(f(x,\,y,\,z)=0\)</span> 으로 주어진 등위면은 주어진 점 <span class="math inline">\((x_0,\,y_0,\,z_0)\)</span> 근방에서 함수<span class="math inline">\(z=g(x,\,y)\)</span> 의 그래프로 나타남을 설명하고, 이때 미분계수 <span class="math inline">\(D_1 g(x_0,\,y_0)\)</span> 와 <span class="math inline">\(D_2 g(x_0,\,y_0)\)</span> 를 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -484,7 +487,7 @@ g'(1) = \dfrac{\pi}{2}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_6" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.8 (SNU 탐구문제 12.2.6)</strong></span> 식</p>
+<p><span class="theorem-title"><strong>연습문제 12.8 (SNU 12.2.6)</strong></span> 식</p>
 <p><span class="math display">\[
 xe^y-y+1=0
 \]</span></p>
@@ -497,7 +500,7 @@ xe^y-y+1=0
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_7" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.9 (SNU 탐구문제 12.2.7)</strong></span> 좌표평면에서 정의된 함수 <span class="math inline">\(z=f(x,\,y)\)</span> 가 식</p>
+<p><span class="theorem-title"><strong>연습문제 12.9 (SNU 12.2.7)</strong></span> 좌표평면에서 정의된 함수 <span class="math inline">\(z=f(x,\,y)\)</span> 가 식</p>
 <p><span class="math display">\[
 x^3+y^3+z^3+3xyz=6
 \]</span></p>
@@ -511,7 +514,7 @@ x^3+y^3+z^3+3xyz=6
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_8" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.10 (SNU 탐구문제 12.2.8)</strong></span> 방정식</p>
+<p><span class="theorem-title"><strong>연습문제 12.10 (SNU 12.2.8)</strong></span> 방정식</p>
 <p><span class="math display">\[
 x^5+2x^3+x+c=0
 \]</span></p>
@@ -531,7 +534,7 @@ g''(y)=\dfrac{20x^3+12x}{(5x^4+6x^2+1)^2}\cdot \dfrac{dg}{dy} \implies g''(0)=0
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_9" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.11 (SNU 탐구문제 12.2.9)</strong></span> 방정식</p>
+<p><span class="theorem-title"><strong>연습문제 12.11 (SNU 12.2.9)</strong></span> 방정식</p>
 <p><span class="math display">\[
 x^3+ax-10=0
 \]</span></p>
@@ -552,7 +555,7 @@ g''(1) &amp;= -\dfrac{20}{169}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_10" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.12 (SNU 탐구문제 12.2.10)</strong></span> 다음 주장에서 잘못된 곳을 가려라</p>
+<p><span class="theorem-title"><strong>연습문제 12.12 (SNU 12.2.10)</strong></span> 다음 주장에서 잘못된 곳을 가려라</p>
 <blockquote class="blockquote">
 <p><span class="math inline">\(x\)</span> 에 관한 함수 <span class="math inline">\(y\)</span> 가 <span class="math inline">\(y^3=x(x-1)(x-2)\)</span> 로 주어졌을 때, 이 식을 <span class="math inline">\(x\)</span> 에 관해 미분하면, <span class="math display">\[
 3y^2y'=(x-1)(x-2)+x(x-2)+x(x-1)
@@ -570,7 +573,7 @@ y'=\dfrac{x(x-1)+x(x-2)+(x-1)(x-2)}{[x(x-1)(x-2)]^{2/3}}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_11" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.13 (SNU 탐구문제 12.2.11)</strong></span> <span class="math inline">\((x,\,y)\)</span> 에 대한 함수 <span class="math inline">\(z\)</span> 가 식 <span class="math inline">\(x^3-2y^2+z^2=0\)</span> 을 만족시킬 때, <span class="math inline">\(\dfrac{\partial z}{\partial x}(1,\,1)\)</span> 과 <span class="math inline">\(\dfrac{\partial z}{\partial y}(1,\,1)\)</span> 을 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.13 (SNU 12.2.11)</strong></span> <span class="math inline">\((x,\,y)\)</span> 에 대한 함수 <span class="math inline">\(z\)</span> 가 식 <span class="math inline">\(x^3-2y^2+z^2=0\)</span> 을 만족시킬 때, <span class="math inline">\(\dfrac{\partial z}{\partial x}(1,\,1)\)</span> 과 <span class="math inline">\(\dfrac{\partial z}{\partial y}(1,\,1)\)</span> 을 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -584,7 +587,7 @@ y'=\dfrac{x(x-1)+x(x-2)+(x-1)(x-2)}{[x(x-1)(x-2)]^{2/3}}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_12" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.14 (SNU 탐구문제 12.2.12)</strong></span> <span class="math inline">\(y^5+3x^2y^3-7x^6-8=0\)</span> 일 때 <span class="math inline">\(\dfrac{dy}{dx}(0)\)</span> 을 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.14 (SNU 12.2.12)</strong></span> <span class="math inline">\(y^5+3x^2y^3-7x^6-8=0\)</span> 일 때 <span class="math inline">\(\dfrac{dy}{dx}(0)\)</span> 을 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -601,7 +604,7 @@ y'=\dfrac{x(x-1)+x(x-2)+(x-1)(x-2)}{[x(x-1)(x-2)]^{2/3}}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_12_2_13" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.15 (SNU 탐구문제 12.2.13)</strong></span> 만약 <span class="math inline">\(n\)</span> 차 정사각행렬 <span class="math inline">\(A\)</span> 가 항등행렬 <span class="math inline">\(I\)</span> 에 아주 가까우면, <span class="math inline">\(e^X=A\)</span> 가 되는 정사각행렬 <span class="math inline">\(X\)</span> 가 존재함을 설명하라. 이때 임의의 자연수 <span class="math inline">\(k\)</span> 에 대하여 <span class="math inline">\(Y^k=A\)</span> 가 되는 정사각행렬 <span class="math inline">\(Y\)</span> 가 존재함을 보이라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.15 (SNU 12.2.13)</strong></span> 만약 <span class="math inline">\(n\)</span> 차 정사각행렬 <span class="math inline">\(A\)</span> 가 항등행렬 <span class="math inline">\(I\)</span> 에 아주 가까우면, <span class="math inline">\(e^X=A\)</span> 가 되는 정사각행렬 <span class="math inline">\(X\)</span> 가 존재함을 설명하라. 이때 임의의 자연수 <span class="math inline">\(k\)</span> 에 대하여 <span class="math inline">\(Y^k=A\)</span> 가 되는 정사각행렬 <span class="math inline">\(Y\)</span> 가 존재함을 보이라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -609,6 +612,7 @@ y'=\dfrac{x(x-1)+x(x-2)+(x-1)(x-2)}{[x(x-1)(x-2)]^{2/3}}
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
