@@ -1,0 +1,57 @@
+project:
+  type: book
+  output-dir : docs
+
+book:
+  title: "미적분학"
+  author: "julia.kaeri@gmail.con"
+  site-url: https://julia-kaeri.github.io/Calculus/
+  repo-url: https://github.com/Julia-KAERI/Calculus/
+  repo-branch: main
+  date: "7/18/2023"
+  page-navigation: true
+  reader-mode: true
+  #language: _language-ko_custom.yml
+  sidebar:
+    search: true
+    style: floating
+    collapse-level: 1
+    border: true
+  
+  chapters:
+    - index.qmd
+    - part : src/calculus/calculus.qmd
+      chapters: 
+        - src/calculus/01_series.qmd
+        - src/calculus/02_power_series.qmd
+        - src/calculus/03_tayler_series.qmd
+        - src/calculus/04_coordinate_systems.qmd
+        - src/calculus/05_vectors.qmd
+        - src/calculus/06_matrix.qmd
+        - src/calculus/07_square_matrix.qmd
+        - src/calculus/08_3dspace.qmd
+        - src/calculus/09_curves.qmd
+        - src/calculus/10_multivariable_functions.qmd
+        - src/calculus/11_higher_order_derivatives.qmd
+        - src/calculus/12_multivariable_vector_functions.qmd
+        - src/calculus/13_vector_field.qmd
+    
+
+    # - part : src/figures/figures.qmd
+    #   chapters :
+    #     - src/figures/figure01.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    fontsize: 0.9em
+    # html-math-method: mathml
+    css: custom.css
+  # pdf:
+  #   documentclass: scrreprt
+
+
+
