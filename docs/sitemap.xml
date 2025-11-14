@@ -1,71 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/index.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/index.html</loc>
     <lastmod>2024-10-02T08:09:50.496Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/calculus.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/calculus.html</loc>
     <lastmod>2025-11-10T05:52:30.691Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/01_series.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/01_series.html</loc>
     <lastmod>2025-11-10T10:22:24.014Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/02_power_series.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/02_power_series.html</loc>
     <lastmod>2025-11-10T10:47:53.776Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/03_tayler_series.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/03_tayler_series.html</loc>
     <lastmod>2025-11-11T23:11:28.288Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/04_coordinate_systems.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/04_coordinate_systems.html</loc>
     <lastmod>2025-11-11T23:11:28.289Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/05_vectors.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/05_vectors.html</loc>
     <lastmod>2025-11-11T23:11:28.290Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/06_matrix.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/06_matrix.html</loc>
     <lastmod>2025-11-11T23:11:28.291Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/07_square_matrix.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/07_square_matrix.html</loc>
     <lastmod>2025-11-11T23:11:28.293Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/08_3dspace.html</loc>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/08_3dspace.html</loc>
     <lastmod>2025-11-11T23:11:28.294Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/09_curves.html</loc>
-    <lastmod>2025-11-14T00:01:56.854Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/10_multivariable_functions.html</loc>
-    <lastmod>2025-11-12T05:45:49.587Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/11_higher_order_derivatives.html</loc>
-    <lastmod>2025-11-12T08:12:25.708Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/12_multivariable_vector_functions.html</loc>
-    <lastmod>2025-11-12T08:36:15.534Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/13_vector_field.html</loc>
-    <lastmod>2025-11-12T08:52:04.375Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/references.html</loc>
-    <lastmod>2025-09-22T01:16:20.353Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/Calculus/src/calculus/09_curves.html</loc>
     <lastmod>2025-11-14T00:01:56.854Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/10_multivariable_functions.html</loc>
+    <lastmod>2025-11-12T05:45:49.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/11_higher_order_derivatives.html</loc>
+    <lastmod>2025-11-12T08:12:25.708Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/12_multivariable_vector_functions.html</loc>
+    <lastmod>2025-11-12T08:36:15.534Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/Calculus/src/calculus/13_vector_field.html</loc>
+    <lastmod>2025-11-14T00:06:00.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/Calculus/references.html</loc>
+    <lastmod>2025-09-22T01:16:20.353Z</lastmod>
   </url>
 </urlset>
