@@ -35,6 +35,7 @@ book:
         - src/calculus/11_higher_order_derivatives.qmd
         - src/calculus/12_multivariable_vector_functions.qmd
         - src/calculus/13_vector_field.qmd
+        - src/calculus/14_multiple_integrals.qmd
     
 
     # - part : src/figures/figures.qmd

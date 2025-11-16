@@ -1,0 +1,85 @@
+---
+title: "다중적분"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+{{< include ../../latexmacros.qmd >}}
+
+## 넓이와 부피
+
+</br>
+
+## 다중적분
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_2_2} 
+
+#### SNU 14.2.2 (적분과 평균값 정리)
+
+$n$-공간의 영역 $A$ 에서 연속인 함수 $f$ 가 최대값과 최소값을 가진다고 하자. 이 때 $A$ 가 곡선연결되어 있으면
+
+$$
+\dfrac{1}{\text{vol}(A)} \int_A f=f(P)
+$$
+
+를 만족하는 점 $P\in A$ 가 존재함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$f$ 의 최대값이 $P_M\in A$ 에서, 최소값은 $P_m \in A$ 에서 정해진다고 하자. 그렇다면
+
+$$
+f(P_m) = \dfrac{1}{\text{vol}(A)}\int_A f(P_m) \le \dfrac{1}{\text{vol}(A)} \int_A f \le \dfrac{1}{\text{vol}(A)}\int_A f(P_M) = f(P_M)
+$$
+
+이다. $A$ 가 곡선연결 되어 있으므로 $P_M$ 과 $P_m$ 을 잇는 곡선 $X(t)$ 을 $X(0)=P_m,\, X(1) = P_M$ 이 되도록 할 수 있다. $f$ 가 $A$ 에서 연속이므로 $f(X(t))$ 도 연속이며 $g=f\circ F$ 에 대해 **중간값 정리**에 의해 문제에서 요구하는 $P\in A$ 가 존재한다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_2_3} 
+
+#### SNU 14.2.3
+
+$n$ 공간의 연결된 영역 $A$ 에서 정의된 연속함수 $f,\,g:A \to \R$ 에 대하여 $f$ 와 $g$ 의 평균값을 각각 $\overline{f},\, \overline{g}$ 로 두면
+
+$$
+\overline{f}:\overline{g} = f(P): g(P)
+$$
+
+가 되는 점 $P$ 가 $A$ 속에 존재함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\overline{f},\, \overline{g}$ 는 아래와 같다.
+$$
+\overline f = \dfrac{1}{\text{vol}(A)}\int_A f,\qquad \overline g = \dfrac{1}{\text{vol}(A)}\int_A g.
+$$
+
+@exr-CAL_14_2_2 로부터 $\overline{f} = f(P_f),\, \overline{g}= g(P_g)$ 인 $P_f,\,P_g\in A$ 가 존재한다. $P_f = P_g$ 이면 $P_f=P_g=P$ 이므로 $P_f\ne P_g$ 일 때만 생각하자. 
+
+$h:A \to \R$ 을 $h=\overline{f}g - \overline{g}f$ 라고 하자. 
+
+$$
+h(P_f) = \overline{f}g(P_f) - \overline{g}f(P_f)=\overline{f}g(P_f) - \overline{f}\overline{g}  > 0
+$$
+
+이면 $g$ 를 최소로 하는 $P_{g,m}\in A$ 에 대해 $h(P_{g,m})<0$ 이므로 $h$ 는 $A$ 에서 양의 값과 음의 값을 모두 가질 수 있다. 반대로 $h(P_f) <0$ 이면 $g$ 를 최대로 하는 $P_{g,\,M}\in A$ 에 대해 
+
+
+:::
+
