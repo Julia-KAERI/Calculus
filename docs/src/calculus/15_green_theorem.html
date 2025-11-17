@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; 다중적분 – 미적분학</title>
+<title>15&nbsp; 벡터장의 발산과 그린정리 – 미적분학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/calculus/15_green_theorem.html" rel="next">
-<link href="../../src/calculus/13_vector_field.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../src/calculus/14_multiple_integrals.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/14_multiple_integrals.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다중적분</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/15_green_theorem.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -243,14 +243,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/calculus/14_multiple_integrals.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../src/calculus/14_multiple_integrals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다중적분</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/calculus/15_green_theorem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">15_green_theorem.html</span></span></a>
+  <a href="../../src/calculus/15_green_theorem.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></span></a>
   </div>
 </li>
       </ul>
@@ -271,31 +271,23 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#다중적분" id="toc-다중적분" class="nav-link active" data-scroll-target="#다중적분"><span class="header-section-number">14.1</span> 다중적분</a>
+  <li><a href="#벡터장과-발산" id="toc-벡터장과-발산" class="nav-link active" data-scroll-target="#벡터장과-발산"><span class="header-section-number">15.1</span> 벡터장과 발산</a>
   <ul class="collapse">
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#푸비니-정리" id="toc-푸비니-정리" class="nav-link" data-scroll-target="#푸비니-정리"><span class="header-section-number">14.2</span> 푸비니 정리</a>
-  <ul class="collapse">
-  <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
-  </ul></li>
-  <li><a href="#치환적분법" id="toc-치환적분법" class="nav-link" data-scroll-target="#치환적분법"><span class="header-section-number">14.3</span> 치환적분법</a>
-  <ul class="collapse">
-  <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
-  </ul></li>
-  <li><a href="#부록-푸비니-정리의-증명-중력-관성모멘트" id="toc-부록-푸비니-정리의-증명-중력-관성모멘트" class="nav-link" data-scroll-target="#부록-푸비니-정리의-증명-중력-관성모멘트"><span class="header-section-number">14.4</span> 부록 : 푸비니 정리의 증명, 중력, 관성모멘트</a>
-  <ul class="collapse">
-  <li><a href="#연습문제-3" id="toc-연습문제-3" class="nav-link" data-scroll-target="#연습문제-3">연습문제</a></li>
-  </ul></li>
+  <li><a href="#평면벡터장과-발산정리" id="toc-평면벡터장과-발산정리" class="nav-link" data-scroll-target="#평면벡터장과-발산정리"><span class="header-section-number">15.2</span> 평면벡터장과 발산정리</a></li>
+  <li><a href="#평면-벡터장과-회전도" id="toc-평면-벡터장과-회전도" class="nav-link" data-scroll-target="#평면-벡터장과-회전도"><span class="header-section-number">15.3</span> 평면 벡터장과 회전도</a></li>
+  <li><a href="#경계와-향" id="toc-경계와-향" class="nav-link" data-scroll-target="#경계와-향"><span class="header-section-number">15.4</span> 경계와 향</a></li>
+  <li><a href="#그린-정리" id="toc-그린-정리" class="nav-link" data-scroll-target="#그린-정리"><span class="header-section-number">15.5</span> 그린 정리</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/14_multiple_integrals.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다중적분</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/15_green_theorem.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다중적분</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></h1>
 </div>
 
 
@@ -321,228 +313,209 @@ window.Quarto = {
 \]</span></p>
 </div>
 <p><br></p>
-<section id="다중적분" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="다중적분"><span class="header-section-number">14.1</span> 다중적분</h2>
-<section id="연습문제" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
+<section id="벡터장과-발산" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="벡터장과-발산"><span class="header-section-number">15.1</span> 벡터장과 발산</h2>
+<section id="연습문제" class="level3">
+<h3 class="anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_2_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.1 (SNU 14.2.2 (적분과 평균값 정리))</strong></span> <span class="math inline">\(n\)</span>-공간의 영역 <span class="math inline">\(A\)</span> 에서 연속인 함수 <span class="math inline">\(f\)</span> 가 최대값과 최소값을 가진다고 하자. 이 때 <span class="math inline">\(A\)</span> 가 곡선연결되어 있으면</p>
-<p><span class="math display">\[
-\dfrac{1}{\text{vol}(A)} \int_A f=f(P)
-\]</span></p>
-<p>를 만족하는 점 <span class="math inline">\(P\in A\)</span> 가 존재함을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 의 최대값이 <span class="math inline">\(P_M\in A\)</span> 에서, 최소값은 <span class="math inline">\(P_m \in A\)</span> 에서 정해진다고 하자. 그렇다면</p>
-<p><span class="math display">\[
-f(P_m) = \dfrac{1}{\text{vol}(A)}\int_A f(P_m) \le \dfrac{1}{\text{vol}(A)} \int_A f \le \dfrac{1}{\text{vol}(A)}\int_A f(P_M) = f(P_M)
-\]</span></p>
-<p>이다. <span class="math inline">\(A\)</span> 가 곡선연결 되어 있으므로 <span class="math inline">\(P_M\)</span> 과 <span class="math inline">\(P_m\)</span> 을 잇는 곡선 <span class="math inline">\(X(t)\)</span> 을 <span class="math inline">\(X(0)=P_m,\, X(1) = P_M\)</span> 이 되도록 할 수 있다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(A\)</span> 에서 연속이므로 <span class="math inline">\(f(X(t))\)</span> 도 연속이며 <span class="math inline">\(g=f\circ F\)</span> 에 대해 <strong>중간값 정리</strong>에 의해 문제에서 요구하는 <span class="math inline">\(P\in A\)</span> 가 존재한다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_2_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.2 (SNU 14.2.3)</strong></span> <span class="math inline">\(n\)</span> 공간의 연결된 영역 <span class="math inline">\(A\)</span> 에서 정의된 연속함수 <span class="math inline">\(f,\,g:A \to \mathbb{R}\)</span> 에 대하여 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 의 평균값을 각각 <span class="math inline">\(\overline{f},\, \overline{g}\)</span> 로 두면</p>
-<p><span class="math display">\[
-\overline{f}:\overline{g} = f(P): g(P)
-\]</span></p>
-<p>가 되는 점 <span class="math inline">\(P\)</span> 가 <span class="math inline">\(A\)</span> 속에 존재함을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CAL_14_2_2" class="quarto-xref">연습문제&nbsp;<span>14.1</span></a> 에 따라 아래를 만족하는 <span class="math inline">\(P_f,\,P_g\)</span> 가 존재한다. <span class="math display">\[
-\overline f = f(P_f) = \dfrac{1}{\text{vol}(A)}\int_A f,\qquad \overline{g} = g(P_g)=\dfrac{1}{\text{vol}(A)}\int_A g.
-\]</span></p>
-<p><span class="math inline">\(P_f = P_g\)</span> 이면 <span class="math inline">\(P_f=P_g=P\)</span> 이므로 <span class="math inline">\(P_f\ne P_g\)</span> 일 때만 생각하자. 그리고</p>
-<p><span class="math display">\[
-h(\boldsymbol{x}) = \overline{f}g(\boldsymbol{x})- \overline{g}f(\boldsymbol{x})
-\]</span></p>
-<p>라고 하면 <span class="math inline">\(\int_A h = 0\)</span> 이다. 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에서 <span class="math inline">\(h(\boldsymbol{x})=0\)</span> 이면 문제가 성립한다. 어떤 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에서 <span class="math inline">\(h(\boldsymbol{x}) &gt; 0\)</span> 이면 <span class="math inline">\(h(\boldsymbol{y})&lt;0\)</span> 인 <span class="math inline">\(\boldsymbol{y}\in A\)</span> 가 존재하며 따라서 어떤 <span class="math inline">\(P\in A\)</span> 에서 <span class="math inline">\(h(P)=0\)</span> 이므로 문제가 성립한다. 어떤 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에서 <span class="math inline">\(h(\boldsymbol{x}) &lt; 0\)</span> 이면 <span class="math inline">\(h(\boldsymbol{y})&gt;0\)</span> 인 <span class="math inline">\(\boldsymbol{y}\in A\)</span> 가 존재하며 따라서 어떤 <span class="math inline">\(P\in A\)</span> 에서 <span class="math inline">\(h(P)=0\)</span> 이므로 문제가 성립한다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_2_7" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.3 (SNU 14.2.7)</strong></span> 좌표평면에서 <span class="math inline">\(x\)</span>-좌표 , <span class="math inline">\(y\)</span>-좌표 가 모두 정수인 점 <span class="math inline">\((x,\,y)\)</span> 를 <strong>정수점(integral point)</strong> 이라 한다. 좌표평면에서 원점을 중심으로 하고 반지름이 <span class="math inline">\(r\)</span> 인 원판에 포함되는 정수점의 개수를 <span class="math inline">\(n(r)\)</span> 이라고 하자. 이때 <span class="math inline">\(\displaystyle \lim_{r\to \infty} \dfrac{n(r)}{r^2} = \pi\)</span> 임을 설명하라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>어떤 자연수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(m\le r &lt; m+1\)</span> 일 때 <span class="math inline">\([r]=m\)</span> 이라고 하자. 그렇다면</p>
-<p><span class="math display">\[
-n(r) = 1 + 4\left(\sum_{k=0}^{[r]}\left[\sqrt{r^2-k^2}\right] \right)
-\]</span></p>
-<p>이다. <span class="math inline">\([\sqrt{r^2-k^2}]\le \sqrt{r^2-k^2}\)</span> 이므로</p>
-<p><span class="math display">\[
-n(r) \le 1 + 4 \int_0^r \sqrt{r^2-k^2}\,dk = \pi r^2 +1
-\]</span></p>
-<p>이고 <span class="math inline">\([\sqrt{r^2-k^2}]\ge \sqrt{r^2-k^2}-1\)</span></p>
-<p><span class="math display">\[
-n(r) \ge \pi r^2 - r+1
-\]</span></p>
-<p>이므로 <span class="math inline">\(r\to \infty\)</span> 극한에서 <span class="math inline">\(n(r)/r^2 \to \pi\)</span> 이다.</p>
-</div>
-<p><br></p>
-</section>
-</section>
-<section id="푸비니-정리" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="푸비니-정리"><span class="header-section-number">14.2</span> 푸비니 정리</h2>
-<section id="연습문제-1" class="level3">
-<h3 class="anchored" data-anchor-id="연습문제-1">연습문제</h3>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_3_14" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.4 (SNU 14.3.14 (델레세의 법칙))</strong></span> 델레세 (Achille Ernest Dellesse) 는 19세기 프랑스의 광물학자였는데 바위가 어떠한 물질로 이루어졌는지에 관심을 많이 가지고 있었다. 바위에 특정한 광물이 얼마나 들어있는지 알려고, 그는 바위를 잘라서 그 단면에 투명한 초종이를 딱맞게 덮은 다음, 구하는 광물이 있는 부분을 표시하였다. 그리고 나서 초종이의 무게를 재고, 광물의 흔적이 있는 부분을 잘라낸 다음 다시 초종이의 무게를 재었다. 이때 단면을 잘 설정하면, 초종이의 무게의 비가 그 단면에서의 특정한 광물의 비를 주는 것뿐 아니라, 바위 전체에서의 특정한 광물의 비를 주게 된다. 이 원리를 설명하라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>단면을 <span class="math inline">\(yz\)</span> 평면에 평행하게 잘랐을 때 <span class="math inline">\(x\)</span> 에서의 광물의 바위의 단면적 <span class="math inline">\(f(x)\)</span> 와 광물의 단면적 <span class="math inline">\(g(x)\)</span> 를 구했다고 하자. <span class="math inline">\([x_0,\,x_1]\)</span> 구간에서 적분한다면 바위의 부피는 <span class="math inline">\(\int_{x_0}^{x_1} f(x)\,dx\)</span> 이며 광물의 부피는 <span class="math inline">\(\int_{x_0}^{x_1} g(x)\,dx\)</span> 이며 바위와 광물의 부피비 <span class="math inline">\(m\)</span> 은 아래와 같다.</p>
-<p><span class="math display">\[
-m = \dfrac{\int_{x_0}^{x_1} g(x)\,dx}{\int_{x_0}^{x_1} f(x)\,dx} = \dfrac{\overline{g}}{\overline{f}}
-\]</span></p>
-<p><a href="#exr-CAL_14_2_3" class="quarto-xref">연습문제&nbsp;<span>14.2</span></a> 에서 보았듯이</p>
-<p><span class="math display">\[
-m = \dfrac{g(P)}{f(P)}
-\]</span></p>
-<p>를 만족하는 <span class="math inline">\(P\in [x_0,\,x_1]\)</span> 이 존재한다.</p>
-</div>
-<p><br></p>
-</section>
-</section>
-<section id="치환적분법" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="치환적분법"><span class="header-section-number">14.3</span> 치환적분법</h2>
-<section id="연습문제-2" class="level3">
-<h3 class="anchored" data-anchor-id="연습문제-2">연습문제</h3>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_4_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.5 (SNU 14.4.5)</strong></span> 좌표공간에서 세개의 원기둥</p>
-<p><span class="math display">\[
-x^2+y^2 \le 1,\quad y^2+z^2\le 1,\quad z^2+x^2 \le 1
-\]</span></p>
-<p>의 공통부분의 부피는 <span class="math inline">\(16-8\sqrt{2} \approx 4.6863\)</span> 임을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((r,\,\theta,\,z)\)</span> 로 표현되는 원기둥 좌표계에서 생각하자.</p>
-<p><span class="math inline">\(0 \le z^2 \le 1-r^2\sin^2\theta\)</span>, <span class="math inline">\(0 \le z^2 \le 1-r^2\cos^2\theta\)</span> 이므로 <span class="math inline">\(0\le \pi/4\)</span> 일 때 대칭을 생각하면 부피 <span class="math inline">\(V\)</span> 에 대해 아래와 같이 계산 할 수 있다.</p>
+<div id="exr-CAL_15_1_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.1 (SNU 15.1.2)</strong></span> <span class="math inline">\(n\)</span>-공간의 열린집합에서 정의된 벡터장 <span class="math inline">\(\boldsymbol{F},\,\boldsymbol{G}\)</span> 및 함수 <span class="math inline">\(h\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \begin{aligned}
-\dfrac{V}{8} &amp;= \int_0^1 \int_0^{\pi/4} \int_{-\sqrt{1-r^2\cos^2\theta}}^{\sqrt{1-r^2\cos^2\theta}} r \,dz \,d\theta \,dr \\[0.3em]
-&amp;= \int_0^{\pi/4} \int_0^1 2r\sqrt{1-r^2\cos^2\theta}\, dr\,d\theta  \\[0.3em]
-&amp;= \int_0^{\pi/4} \left(-\left.\dfrac{2(1-r^2\cos^2\theta)^{3/2}}{3\cos^2\theta}\right|_{r=0}^{r=1}\right)\,d\theta \\[0.3em]
-&amp;= \dfrac{2}{3}\int_0^{\pi/4} \dfrac{(1-\sin^3\theta)}{\cos^2\theta}\,d\theta \\[0.3em]
-&amp;= \dfrac{2}{3} \int_0^{\pi/4} \left(\sec^2\theta - \dfrac{1-\cos^2\theta}{\cos^2\theta}\sin\theta\right)\,d\theta \\[0.3em]
-&amp;= \dfrac{2}{3} \left[\tan \theta - \dfrac{1}{\cos\theta} - \cos\theta\right]_{0}^{\pi/4} \\[0.3em]
-&amp;= \dfrac{2}{3}(1-\sqrt{2}-\dfrac{1}{\sqrt{2}} +1 + 1) = 2 - \sqrt{2}
+\nabla \boldsymbol{\cdot}(\boldsymbol{F}+\boldsymbol{G}) &amp;= \nabla \boldsymbol{\cdot}\boldsymbol{F} + \nabla \boldsymbol{\cdot}\boldsymbol{G},\\[0.3em]
+\nabla \boldsymbol{\cdot}(h\boldsymbol{F}) &amp;= (\nabla h) \boldsymbol{\cdot}\boldsymbol{F} + h(\nabla \boldsymbol{\cdot}\boldsymbol{F})
 \end{aligned}
 \]</span></p>
-<p>이므로 <span class="math inline">\(V=16-8\sqrt{2}\)</span>.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_4_6" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.6 (SNU 14.4.6)</strong></span> 좌표공간속의 세 곡면</p>
-<p><span class="math display">\[
-z=x^2+y^2+9,\qquad z=-x^2-y^2-9,\qquad x^2+y^2=1
-\]</span></p>
-<p>으로 둘러쌓인 부분의 부피를 구하라.</p>
+<p>임을 보이라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\displaystyle V = \int_0^1 \int_0^{2\pi} \int_{-r^2-9}^{r^2+9} r\, dz\,d\theta\,dr = 4\pi \int_0^1 (r^3+9r)\,dr = 19\pi\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_4_10" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.7 (SNU 14.4.10)</strong></span> <span class="math inline">\(n\)</span>-공간의 영역 <span class="math inline">\(A\)</span> 의 <strong>기하학적 <span class="math inline">\(n\)</span> 차원 중심</strong> <span class="math inline">\(\overline{X} :=(\overline{x}_1,\ldots,\,\overline{x}_n)\)</span> 은</p>
-<p><span class="math display">\[
-\overline{x}_j = \dfrac{1}{\text{Vol}(A)} \int_A x_j dV_n ,\qquad (j=1,\ldots,\,n)
-\]</span></p>
-<p>으로 정의한다. 이제 <span class="math inline">\(n\)</span> 차 가역행렬 <span class="math inline">\(L\)</span> 과 <span class="math inline">\(n\)</span>-벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여</p>
-<p><span class="math display">\[
-f:\mathbb{R}^n\to \mathbb{R}^n,\qquad f(X) :=LX+\boldsymbol{v}
-\]</span></p>
-<p>로 정의하자. 이 때 영역 <span class="math inline">\(f(A)\)</span> 의 중심을 <span class="math inline">\(\overline{Y}\)</span> 라고 하면 <span class="math inline">\(f(\overline{X}) = \overline{Y}\)</span> 임을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>선형변환에 의해 변환되므로 <span class="math inline">\(\text{vol}(f(A)) = |\det (L)|\text{vol}(A)\)</span> 이다. <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
-\overline{y}_j &amp;= \dfrac{1}{\text{vol}(f(A))} \int_{f(A)} y_j dV'_n \\[0.3em]
-&amp;=  \dfrac{1}{\text{vol}(f(A))} \int_{A} \left(\sum_{i=1}^nL_{ij}x_j + v_i\right)\,|\det (L)|\, dV_n \\[0.3em]
-&amp;= \dfrac{1}{\text{vol}(A)} \left[\sum_{i=1}^n L_{ij}\int_A x_j \,dV_n + \int_A v_i \,dV_n \right] \\[0.3em]
-&amp;= \sum_{i=1}^n L_{ij}\overline{x}_j + v_i = f(\overline{x}_i)
+\sum_{i} \partial_i (\boldsymbol{F}+\boldsymbol{G})_i &amp;= \sum_i \partial_i F_i + \sum_i \partial_i G_i =  \nabla \boldsymbol{\cdot}\boldsymbol{F} + \nabla \boldsymbol{\cdot}\boldsymbol{G},\\[0.3em]
+\sum_i \partial _i (hF_i) &amp;= \sum_i (\partial_i h) F_i + \sum_i h(\partial_i F_i) =\nabla h \boldsymbol{\cdot}\boldsymbol{F} + h\nabla \boldsymbol{\cdot}\boldsymbol{F}.
 \end{aligned}
 \]</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_4_12" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.8 (SNU 14.4.12 (파푸스의 정리))</strong></span> 좌표평면에서 <span class="math inline">\(y&gt;0\)</span> 인 부분에 있는 영역 <span class="math inline">\(D\)</span> 의 중심과 <span class="math inline">\(x\)</span> 축과의 거리를 <span class="math inline">\(d\)</span> 이라고 하자. 이 때 <span class="math inline">\(D\)</span> 를 <span class="math inline">\(x\)</span> 축 둘레로 회전하여 얻은 회전체의 부피는 <span class="math inline">\(2nd\cdot \text{Vol}_2 (D)\)</span> 임을 보이라.</p>
+<div id="exr-CAL_15_1_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.2 (SNU 15.1.4)</strong></span> 입체각 벡터장</p>
+<p><span class="math display">\[
+\boldsymbol{A}(X) = \dfrac{X}{|X|^3}, \qquad X\in \mathbb{R}^3-\{\mathcal{O}\}
+\]</span></p>
+<p>는 비압축장임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>우선 <span class="math inline">\(d\)</span> 는 아래와 같다. <span class="math display">\[
-d= \dfrac{1}{\text{Vol}_2(D)} \int_D y \,dx\,dy
-\]</span></p>
-<p><span class="math inline">\(x\)</span> 축을 중심으로 하는 원통좌표계를 사용하자. <span class="math inline">\((x,\,r\cos\theta,\, r\sin\theta)\)</span> 를 생각하면</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\nabla \boldsymbol{\cdot}X=3\)</span>, <span class="math inline">\(\nabla |X|^{-3}=-3X/|X|^{5}\)</span> 과 <a href="#exr-CAL_15_1_2" class="quarto-xref">연습문제&nbsp;<span>15.1</span></a> 의 두번째 식을 이용하면</p>
 <p><span class="math display">\[
-\begin{aligned}
-V &amp;= \iiint_D \,dx\,dy\,dz = \iiint_D r\,dx\,dr\,d\theta = \int_0^{2\pi} d \text{Vol}_2(D) \, d\theta = 2\pi d \cdot \text{Vol}_2(D)
-\end{aligned}
+\nabla \boldsymbol{\cdot}\boldsymbol{A} = 3/|X|^{3} - 3 |X|^2/|X|^{5} = 0
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_1_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.3 (SNU 15.1.6)</strong></span> <span class="math inline">\(n\)</span>-공간의 단위벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여, 벡터장</p>
+<p><span class="math display">\[
+\boldsymbol{F}(\boldsymbol{x}) := k(\boldsymbol{x\cdot v})\boldsymbol{v}
+\]</span></p>
+<p>의 발산함수를 구하라. (단 <span class="math inline">\(k\)</span> 는 상수이다.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(F_i = k (\sum_j v_jx_j) v_i\)</span> 이므로</p>
+<p><span class="math display">\[
+\nabla \boldsymbol{\cdot}\boldsymbol{F} = \sum_i \partial_i \left(\sum_j x_j v_j\right)v_i = \sum_{i, j} v_j \delta_{ij}v_i = \sum_i v_i^2 = 1
 \]</span></p>
 </div>
 <p><br></p>
 </section>
 </section>
-<section id="부록-푸비니-정리의-증명-중력-관성모멘트" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="부록-푸비니-정리의-증명-중력-관성모멘트"><span class="header-section-number">14.4</span> 부록 : 푸비니 정리의 증명, 중력, 관성모멘트</h2>
-<section id="연습문제-3" class="level3">
-<h3 class="anchored" data-anchor-id="연습문제-3">연습문제</h3>
-<br>
+<section id="평면벡터장과-발산정리" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="평면벡터장과-발산정리"><span class="header-section-number">15.2</span> 평면벡터장과 발산정리</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_5_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.9 (SNU 14.5.3)</strong></span> 곡선</p>
+<div id="exr-CAL_15_2_0_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.4 (SNU 기본연습문제 2.0.2.1)</strong></span> 좌표평면에서 점 <span class="math inline">\(P\)</span> 를 중심으로 하고 반지름의 길이가 <span class="math inline">\(r\)</span> 인 원판을 <span class="math inline">\(D_r\)</span> 이라고 하자. 이때 점 <span class="math inline">\(P\)</span> 근방에서 정의된 벡터장 <span class="math inline">\(\boldsymbol{F}\)</span> 에 대하여</p>
 <p><span class="math display">\[
-X(t) := t\boldsymbol{i} + \dfrac{2\sqrt{2}}{3}t^{3/2}\boldsymbol{j} + \dfrac{t^2}{2}\boldsymbol{k},\qquad 0 \le t \le 2
+\nabla \boldsymbol{\cdot}\boldsymbol{F}(P) = \lim_{r \to 0}\dfrac{1}{\pi r^2} \int_{\partial D_r} \boldsymbol{F \cdot n} \, ds
 \]</span></p>
-<p>의 밀도함수가</p>
-<p><span class="math display">\[
-\mu(t) = \dfrac{1}{t+1}
-\]</span></p>
-<p>일 때, 가 좌표축에 대한 관성모멘트를 구하라</p>
+<p>임을 보이라. 또 이로부터 발산의 의미를 설명하라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(X'(t) = (1,\, \sqrt{2}t^{1/2},\, t)\)</span>, <span class="math inline">\(|X'(t)| = \sqrt{1+2t + t^2} = t+1\)</span> 이므로 <span class="math inline">\(\mu(t)|X'(t)| = 1\)</span> 이다.</p>
-<p><span class="math display">\[\begin{aligned}
-I_x &amp;= \int_{0}^2 \left(\dfrac{8}{3}t^3 + \dfrac{t^4}{4}\right) \, dt = \dfrac{32}{3} + \dfrac{8}{5}= \dfrac{184}{15}, \\[0.3em]
-I_y &amp;= \int_{0}^2 \left(t^2+ \dfrac{t^4}{4}\right) \, dt = \dfrac{8}{3}+ \dfrac{8}{5}=\dfrac{72}{15},\\[0.3em]
-I_z &amp;= \int_{0}^1\left(t^2+ \dfrac{8t^3}{3}\right) \, dt = \dfrac{8}{3} + \dfrac{32}{3} = \dfrac{40}{3}.
-\end{aligned}
-\]</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CAL_14_5_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.10 (SNU 14.5.5)</strong></span> 질량이 <span class="math inline">\(M\)</span> 인 균질의 원기둥</p>
-<p><span class="math display">\[
-x^2+y^2=R^2,\qquad -a\le z \le a
-\]</span></p>
-<p>의 관성모멘트는 <span class="math inline">\(I_z = MR^2\)</span> 임을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>밀도 <span class="math inline">\(\mu = M/(2\pi aR^2)\)</span> 이며</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>일반성을 잃지 않고 <span class="math inline">\(P\)</span> 를 원점으로 잡을 수 있다. 경로를 <span class="math inline">\(X(t) = (r \cos \theta,\, r \sin \theta)\)</span> 로 매개화하면 <span class="math inline">\(\boldsymbol{n} = (\cos \theta,\, \sin \theta)\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
-I_z &amp;= \int_{-a}^a \iint_{x^2+y^2\le R^2} (x^2+y^2) \mu \,dx\,dy\,dz \\[0.3em]
-&amp;= 2a\int_0^R\int_0^{2\pi} r^3\mu\,dr\,d\theta = a \pi R^4 \mu  = \dfrac{MR^2}{2}
+\int_{\partial D_r} \boldsymbol{F\cdot n}\,ds &amp;= \int_0^{2\pi} r(F_x\cos \theta + F_y \sin \theta ) d\theta
 \end{aligned}
+\]</span></p>
+<p>이다. 테일러 전개를 이용하면</p>
+<p><span class="math display">\[
+\boldsymbol{F}(x,\,y) = \boldsymbol{F}(\mathcal{O}) + x\partial_x F_x(\mathcal{O})\boldsymbol{i} + y\partial_y F_y(\mathcal{O})\boldsymbol{j}
+\]</span></p>
+<p>이며, 따라서</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{\partial D_r} \boldsymbol{F\cdot n}\,ds &amp;= \underbrace{\int_0^{2\pi} (r\cos\theta F_x(\mathcal{O})+ r \sin \theta F_y(\mathcal{O}))\,d\theta}_{\Large = 0}  \\[0.3em]
+&amp;\quad + \int_0^{2\pi} \left(r^2 \cos^2\theta \partial_x F_x(\mathcal{O}) + r^2 \sin^2\theta \partial_y F_y (\mathcal{O}) \right) \\[0.3em]
+&amp;= \pi r^2\left(\partial_x F_x(\mathcal{O}) + \partial_y F_y(\mathcal{O})\right)
+\end{aligned}
+\]</span></p>
+<p>따라서 문제의 주어진 극한은 <span class="math inline">\(\nabla \boldsymbol{\cdot}\boldsymbol{F}(P)\)</span> 이다.</p>
+<p>테일러 전개에서 <span class="math inline">\(r^k,\, k&gt;2\)</span> 항은 극한에서 <span class="math inline">\(\to 0\)</span> 이므로 무시할 수 있다.</p>
+</div>
+<p><br></p>
+</section>
+<section id="평면-벡터장과-회전도" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="평면-벡터장과-회전도"><span class="header-section-number">15.3</span> 평면 벡터장과 회전도</h2>
+<p><em>연습문제 없음</em></p>
+<p><br></p>
+</section>
+<section id="경계와-향" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="경계와-향"><span class="header-section-number">15.4</span> 경계와 향</h2>
+<p><em>연습문제 없음</em></p>
+<p><br></p>
+</section>
+<section id="그린-정리" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="그린-정리"><span class="header-section-number">15.5</span> 그린 정리</h2>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_5_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.5 (SNU 15.5.1)</strong></span> 좌표평면에서 단위원 <span class="math inline">\(x^2+y^2=1\)</span> 을 반시게 방향으로 한바퀴 도는 곡선을 <span class="math inline">\(C\)</span> 라고 할 때, 선적분</p>
+<p><span class="math display">\[
+\int_C \left(e^{\text{arctan}\,x} + (xy+1) e^{xy}\right)\,dx + \left(x^3+3xy^2 +x^2e^{xy}\right)\,dy
+\]</span></p>
+<p>를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>단위원 <span class="math inline">\(D_1\)</span> 에 대해 <span class="math display">\[
+\begin{aligned}
+{}[문제의 적분] &amp;= \int_{D_1} \left(-xe^{xy} -(x^2y+x) e^{xy} + 3x^2 + 3y^2 +2xe^{xy} + yx^2e^{xy} \right)\,dx\,dy \\[0.3em]
+&amp;=\int_{D_1}3(x^2+y^2)\,dx\,dy =3\int_{0}^{2\pi}  \int_{0}^1 r^3\,dr\,d\theta = \dfrac{3\pi}{2}
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_5_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.6 (SNU 15.5.2)</strong></span> 그린 정리를 이용하여 다음 적분을 구하라.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \int_C (x+y^2)dx + (y+x^2)\,dy\)</span>, <span class="math inline">\(C\)</span> 는 네 점 $(,,)을 꼭지점으로 하는 정사각형의 둘레.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle \int_C (x^2+y^2)dx -2xy\,dy\)</span> <span class="math inline">\(C\)</span> 는 <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=0\)</span>, <span class="math inline">\(x+y=1\)</span> 로 둘러싸인 삼각형의 둘레.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \int_C (y+e^x)dx + (2x^2+\cos y)\,dy\)</span>, <span class="math inline">\(C\)</span> 는 점 <span class="math inline">\((0,\,0)\)</span>, <span class="math inline">\((1,\,1)\)</span>, <span class="math inline">\((2,\,0)\)</span> 을 꼭지점으로 하는 삼각형의 둘레.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle \int_C (x^2-y^2)\,dx + xy\,dy\)</span>, <span class="math inline">\(C\)</span> 는 <span class="math inline">\(y=x\)</span> 와 <span class="math inline">\(y=x^2\)</span> 으로 둘러쌓인 부분의 경계.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(\displaystyle \int_C (-y^2+e^{e^x})\,dx + (\text{arctan}\, y)\,dy\)</span>, <span class="math inline">\(C\)</span> 는 <span class="math inline">\(y=x^2\)</span> 과 <span class="math inline">\(x=y^2\)</span> 으로 둘러싸인 부분의 경계.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(\displaystyle \int_C x^2\,dy - y^2\,dx\)</span>, <span class="math inline">\(C\)</span> 는 극좌표로 <span class="math inline">\(r=1+\cos\theta\)</span> 로 주어지는 곡선.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+(1) \quad [\cdots] &amp;= \int_{-1}^1 \int_{-1}^1 \left(2x - 2y\right)\,dx\,dy = 0
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+(2) \quad [\cdots] &amp;= \int_0^1 \int_{0}^{1-x} (-2y - 2y)\,dy\,dx = -2 \int_0^1 (1-x)^2 \,dx = -\dfrac{2}{3}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+(3) \quad [\cdots] &amp;= \int_0^1 \int_0^x (4x - 1)\,dy\,dx + \int_1^2 \int_0^{2-x} (4x-1) = 3
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+(4) \quad [\cdots] &amp;= \int_0^1 \int_{x^2}^x (3y)\,dy = \dfrac{1}{5}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+(5) \quad [\cdots] &amp;= \int_0^1 \int_{x^2}^{\sqrt{x}} (2y)\,dy\,dx =\dfrac{3}{10}.
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+(6) \quad [\cdots] &amp;= \int_A (2x+2y)\,dx\,dy = \int_0^{2\pi} \int_0^{1+\cos\theta} 2r^2(\cos\theta + \sin \theta)\,dr\,d\theta = \dfrac{5\pi}{2}
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_5_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.7 (SNU 15.5.3)</strong></span> 그린 정리를 이용하여 <span class="math inline">\(x\)</span> 축과 사이클로이드</p>
+<p><span class="math display">\[
+x=a(t-\sin t),\quad y = a(1-\cos t)\qquad \quad (0\le t \le 2\pi)
+\]</span></p>
+<p>로 둘러쌓인 부분의 넓이를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\([Area]=-\int_{\partial D} y\,dx\)</span> 를 이용한다 <span class="math inline">\(x\)</span> 축 위의 선은 <span class="math inline">\(y=0\)</span> 이므로 적분할 필요가 없고 주어진 곡선은 시계방향으로 돌지만 그린정리에서의 방향은 반시계 방향이므로 <span class="math display">\[
+{}[Area] = \int_0^{2\pi} a^2(1-\cos t)^2\,dt = 3\pi a^2
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_5_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.8 (SNU 15.5.7)</strong></span> 영역</p>
+<p><span class="math display">\[
+D=\{(x,\,y)\in \mathbb{R}^2 : y\ge 0\}
+\]</span></p>
+<p>에서 정의된 함수 <span class="math inline">\(Q(x,\,y) := e^{-y^2} \arctan x\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\int_{\partial D} Q(x,\,y) \,dy \ne \iint_D \dfrac{\partial Q}{\partial x}\,dx\,dy
+\]</span></p>
+<p>임을 보이라. 이로부터 그린정리는 유계인 영역이 아니면 성립하지 않음을 알 수 있다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\int_{\partial D} Q(x,\,y)\, dy =
 \]</span></p>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -948,13 +921,13 @@ I_z &amp;= \int_{-a}^a \iint_{x^2+y^2\le R^2} (x^2+y^2) \mu \,dx\,dy\,dz \\[0.3e
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/calculus/13_vector_field.html" class="pagination-link" aria-label="벡터장과 선적분">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">벡터장과 선적분</span></span>
+      <a href="../../src/calculus/14_multiple_integrals.html" class="pagination-link" aria-label="다중적분">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다중적분</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/calculus/15_green_theorem.html" class="pagination-link" aria-label="15_green_theorem.html">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">15_green_theorem.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

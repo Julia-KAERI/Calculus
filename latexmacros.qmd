@@ -14,7 +14,7 @@ format: html
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\supp}{\operatorname{supp}}
-
+\newcommand{\bcdot}{\bf{\cdot}}
 \def\Xint#1{\mathchoice
    {\XXint\displaystyle\textstyle{#1}}%
    {\XXint\textstyle\scriptstyle{#1}}%

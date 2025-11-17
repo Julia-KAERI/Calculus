@@ -7,8 +7,6 @@ crossref:
 ---
 {{< include ../../latexmacros.qmd >}}
 
-## 넓이와 부피
-
 </br>
 
 ## 다중적분
@@ -64,22 +62,302 @@ $$
 </div>
 
 ::: {.solution}
-
-$\overline{f},\, \overline{g}$ 는 아래와 같다.
+ 
+@exr-CAL_14_2_2 에 따라 아래를 만족하는 $P_f,\,P_g$ 가 존재한다.
 $$
-\overline f = \dfrac{1}{\text{vol}(A)}\int_A f,\qquad \overline g = \dfrac{1}{\text{vol}(A)}\int_A g.
-$$
-
-@exr-CAL_14_2_2 로부터 $\overline{f} = f(P_f),\, \overline{g}= g(P_g)$ 인 $P_f,\,P_g\in A$ 가 존재한다. $P_f = P_g$ 이면 $P_f=P_g=P$ 이므로 $P_f\ne P_g$ 일 때만 생각하자. 
-
-$h:A \to \R$ 을 $h=\overline{f}g - \overline{g}f$ 라고 하자. 
-
-$$
-h(P_f) = \overline{f}g(P_f) - \overline{g}f(P_f)=\overline{f}g(P_f) - \overline{f}\overline{g}  > 0
+\overline f = f(P_f) = \dfrac{1}{\text{vol}(A)}\int_A f,\qquad \overline{g} = g(P_g)=\dfrac{1}{\text{vol}(A)}\int_A g.
 $$
 
-이면 $g$ 를 최소로 하는 $P_{g,m}\in A$ 에 대해 $h(P_{g,m})<0$ 이므로 $h$ 는 $A$ 에서 양의 값과 음의 값을 모두 가질 수 있다. 반대로 $h(P_f) <0$ 이면 $g$ 를 최대로 하는 $P_{g,\,M}\in A$ 에 대해 
+$P_f = P_g$ 이면 $P_f=P_g=P$ 이므로 $P_f\ne P_g$ 일 때만 생각하자. 그리고 
 
+$$
+h(\bf{x}) = \overline{f}g(\bf{x})- \overline{g}f(\bf{x})
+$$ 
+
+라고 하면 $\int_A h = 0$ 이다. 모든 $\bf{x}\in A$ 에서 $h(\bf{x})=0$ 이면 문제가 성립한다. 어떤 $\bf{x}\in A$ 에서 $h(\bf{x}) > 0$ 이면 $h(\bf{y})<0$ 인 $\bf{y}\in A$ 가 존재하며 따라서 어떤 $P\in A$ 에서 $h(P)=0$ 이므로 문제가 성립한다. 어떤 $\bf{x}\in A$ 에서 $h(\bf{x}) < 0$ 이면 $h(\bf{y})>0$ 인 $\bf{y}\in A$ 가 존재하며 따라서 어떤 $P\in A$ 에서 $h(P)=0$ 이므로 문제가 성립한다.
 
 :::
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_2_7} 
+
+#### SNU 14.2.7
+
+좌표평면에서 $x$-좌표 , $y$-좌표 가 모두 정수인 점 $(x,\,y)$ 를 **정수점(integral point)** 이라 한다. 좌표평면에서 원점을 중심으로 하고 반지름이 $r$ 인 원판에 포함되는 정수점의 개수를 $n(r)$ 이라고 하자. 이때 $\displaystyle \lim_{r\to \infty} \dfrac{n(r)}{r^2} = \pi$ 임을 설명하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+어떤 자연수 $m$ 에 대해 $m\le r < m+1$ 일 때 $[r]=m$ 이라고 하자. 그렇다면
+
+$$
+n(r) = 1 + 4\left(\sum_{k=0}^{[r]}\left[\sqrt{r^2-k^2}\right] \right) 
+$$
+
+이다. $[\sqrt{r^2-k^2}]\le \sqrt{r^2-k^2}$ 이므로 
+
+$$
+n(r) \le 1 + 4 \int_0^r \sqrt{r^2-k^2}\,dk = \pi r^2 +1
+$$
+
+이고 $[\sqrt{r^2-k^2}]\ge \sqrt{r^2-k^2}-1$ 
+
+$$
+n(r) \ge \pi r^2 - r+1
+$$
+
+이므로 $r\to \infty$ 극한에서 $n(r)/r^2 \to \pi$ 이다.
+
+:::
+
+</br>
+
+## 푸비니 정리
+
+### 연습문제
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_3_14} 
+
+#### SNU 14.3.14 (델레세의 법칙)
+
+델레세 (Achille Ernest Dellesse) 는 19세기 프랑스의 광물학자였는데 바위가 어떠한 물질로 이루어졌는지에 관심을 많이 가지고 있었다. 바위에 특정한 광물이 얼마나 들어있는지 알려고, 그는 바위를 잘라서 그 단면에 투명한 초종이를 딱맞게 덮은 다음, 구하는 광물이 있는 부분을 표시하였다. 그리고 나서 초종이의 무게를 재고, 광물의 흔적이 있는 부분을 잘라낸 다음 다시 초종이의 무게를 재었다. 이때 단면을 잘 설정하면, 초종이의 무게의 비가 그 단면에서의 특정한 광물의 비를 주는 것뿐 아니라, 바위 전체에서의 특정한 광물의 비를 주게 된다. 이 원리를 설명하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+단면을 $yz$ 평면에 평행하게 잘랐을 때 $x$ 에서의 광물의 바위의 단면적 $f(x)$ 와 광물의 단면적 $g(x)$ 를 구했다고 하자. $[x_0,\,x_1]$ 구간에서 적분한다면 바위의 부피는 $\int_{x_0}^{x_1} f(x)\,dx$ 이며 광물의 부피는 $\int_{x_0}^{x_1} g(x)\,dx$ 이며 바위와 광물의 부피비 $m$ 은 아래와 같다.
+
+$$
+m = \dfrac{\int_{x_0}^{x_1} g(x)\,dx}{\int_{x_0}^{x_1} f(x)\,dx} = \dfrac{\overline{g}}{\overline{f}}
+$$
+
+@exr-CAL_14_2_3 에서 보았듯이
+
+$$
+m = \dfrac{g(P)}{f(P)}
+$$
+
+를 만족하는 $P\in [x_0,\,x_1]$ 이 존재한다.
+
+:::
+
+</br>
+
+## 치환적분법
+
+### 연습문제
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_4_5} 
+
+#### SNU 14.4.5
+
+좌표공간에서 세개의 원기둥
+
+$$
+x^2+y^2 \le 1,\quad y^2+z^2\le 1,\quad z^2+x^2 \le 1
+$$
+
+의 공통부분의 부피는 $16-8\sqrt{2} \approx 4.6863$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$(r,\,\theta,\,z)$ 로 표현되는 원기둥 좌표계에서 생각하자.
+
+$0 \le z^2 \le 1-r^2\sin^2\theta$, $0 \le z^2 \le 1-r^2\cos^2\theta$ 이므로 $0\le \pi/4$ 일 때 대칭을 생각하면 부피 $V$ 에 대해 아래와 같이 계산 할 수 있다.
+
+$$
+\begin{aligned}
+\dfrac{V}{8} &= \int_0^1 \int_0^{\pi/4} \int_{-\sqrt{1-r^2\cos^2\theta}}^{\sqrt{1-r^2\cos^2\theta}} r \,dz \,d\theta \,dr \\[0.3em]
+&= \int_0^{\pi/4} \int_0^1 2r\sqrt{1-r^2\cos^2\theta}\, dr\,d\theta  \\[0.3em]
+&= \int_0^{\pi/4} \left(-\left.\dfrac{2(1-r^2\cos^2\theta)^{3/2}}{3\cos^2\theta}\right|_{r=0}^{r=1}\right)\,d\theta \\[0.3em]
+&= \dfrac{2}{3}\int_0^{\pi/4} \dfrac{(1-\sin^3\theta)}{\cos^2\theta}\,d\theta \\[0.3em]
+&= \dfrac{2}{3} \int_0^{\pi/4} \left(\sec^2\theta - \dfrac{1-\cos^2\theta}{\cos^2\theta}\sin\theta\right)\,d\theta \\[0.3em]
+&= \dfrac{2}{3} \left[\tan \theta - \dfrac{1}{\cos\theta} - \cos\theta\right]_{0}^{\pi/4} \\[0.3em]
+&= \dfrac{2}{3}(1-\sqrt{2}-\dfrac{1}{\sqrt{2}} +1 + 1) = 2 - \sqrt{2}
+\end{aligned} 
+$$
+
+이므로 $V=16-8\sqrt{2}$.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_4_6} 
+
+#### SNU 14.4.6
+
+좌표공간속의 세 곡면
+
+$$
+z=x^2+y^2+9,\qquad z=-x^2-y^2-9,\qquad x^2+y^2=1
+$$
+
+으로 둘러쌓인 부분의 부피를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\displaystyle V = \int_0^1 \int_0^{2\pi} \int_{-r^2-9}^{r^2+9} r\, dz\,d\theta\,dr = 4\pi \int_0^1 (r^3+9r)\,dr = 19\pi$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_4_10} 
+
+#### SNU 14.4.10
+$n$-공간의 영역 $A$ 의 **기하학적 $n$ 차원 중심** $\overline{X} :=(\overline{x}_1,\ldots,\,\overline{x}_n)$ 은
+
+$$
+\overline{x}_j = \dfrac{1}{\text{Vol}(A)} \int_A x_j dV_n ,\qquad (j=1,\ldots,\,n)
+$$
+
+으로 정의한다. 이제 $n$ 차 가역행렬 $L$ 과 $n$-벡터 $\bf{v}$ 에 대하여
+
+$$
+f:\R^n\to \R^n,\qquad f(X) :=LX+\bf{v}
+$$
+
+로 정의하자. 이 때 영역 $f(A)$ 의 중심을 $\overline{Y}$ 라고 하면 $f(\overline{X}) = \overline{Y}$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+선형변환에 의해 변환되므로 $\text{vol}(f(A)) = |\det (L)|\text{vol}(A)$ 이다. 
+$$
+\begin{aligned}
+\overline{y}_j &= \dfrac{1}{\text{vol}(f(A))} \int_{f(A)} y_j dV'_n \\[0.3em]
+&=  \dfrac{1}{\text{vol}(f(A))} \int_{A} \left(\sum_{i=1}^nL_{ij}x_j + v_i\right)\,|\det (L)|\, dV_n \\[0.3em]
+&= \dfrac{1}{\text{vol}(A)} \left[\sum_{i=1}^n L_{ij}\int_A x_j \,dV_n + \int_A v_i \,dV_n \right] \\[0.3em]
+&= \sum_{i=1}^n L_{ij}\overline{x}_j + v_i = f(\overline{x}_i)
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_4_12} 
+
+#### SNU 14.4.12 (파푸스의 정리)
+
+좌표평면에서 $y>0$ 인 부분에 있는 영역 $D$ 의 중심과 $x$ 축과의 거리를 $d$ 이라고 하자. 이 때 $D$ 를 $x$ 축 둘레로 회전하여 얻은 회전체의 부피는 $2nd\cdot \text{Vol}_2 (D)$ 임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+우선 $d$ 는 아래와 같다.
+$$
+d= \dfrac{1}{\text{Vol}_2(D)} \int_D y \,dx\,dy
+$$
+
+$x$ 축을 중심으로 하는 원통좌표계를 사용하자. $(x,\,r\cos\theta,\, r\sin\theta)$ 를 생각하면 
+
+$$
+\begin{aligned}
+V &= \iiint_D \,dx\,dy\,dz = \iiint_D r\,dx\,dr\,d\theta = \int_0^{2\pi} d \text{Vol}_2(D) \, d\theta = 2\pi d \cdot \text{Vol}_2(D)
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+## 부록 : 푸비니 정리의 증명, 중력, 관성모멘트
+
+### 연습문제
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_5_3} 
+
+#### SNU 14.5.3
+
+곡선
+
+$$
+X(t) := t\bf{i} + \dfrac{2\sqrt{2}}{3}t^{3/2}\bf{j} + \dfrac{t^2}{2}\bf{k},\qquad 0 \le t \le 2
+$$
+
+의 밀도함수가 
+
+$$
+\mu(t) = \dfrac{1}{t+1}
+$$
+
+일 때, 가 좌표축에 대한 관성모멘트를 구하라
+
+:::
+
+</div>
+
+::: {.solution}
+
+$X'(t) = (1,\, \sqrt{2}t^{1/2},\, t)$, $|X'(t)| = \sqrt{1+2t + t^2} = t+1$ 이므로 $\mu(t)|X'(t)| = 1$ 이다. 
+
+$$\begin{aligned}
+I_x &= \int_{0}^2 \left(\dfrac{8}{3}t^3 + \dfrac{t^4}{4}\right) \, dt = \dfrac{32}{3} + \dfrac{8}{5}= \dfrac{184}{15}, \\[0.3em]
+I_y &= \int_{0}^2 \left(t^2+ \dfrac{t^4}{4}\right) \, dt = \dfrac{8}{3}+ \dfrac{8}{5}=\dfrac{72}{15},\\[0.3em]
+I_z &= \int_{0}^1\left(t^2+ \dfrac{8t^3}{3}\right) \, dt = \dfrac{8}{3} + \dfrac{32}{3} = \dfrac{40}{3}.
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_14_5_5} 
+
+#### SNU 14.5.5
+
+질량이 $M$ 인 균질의 원기둥
+
+$$
+x^2+y^2=R^2,\qquad -a\le z \le a
+$$
+
+의 관성모멘트는 $I_z = MR^2$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+밀도 $\mu = M/(2\pi aR^2)$ 이며
+
+$$
+\begin{aligned}
+I_z &= \int_{-a}^a \iint_{x^2+y^2\le R^2} (x^2+y^2) \mu \,dx\,dy\,dz \\[0.3em]
+&= 2a\int_0^R\int_0^{2\pi} r^3\mu\,dr\,d\theta = a \pi R^4 \mu  = \dfrac{MR^2}{2}
+\end{aligned}
+$$
+
+:::

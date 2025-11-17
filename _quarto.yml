@@ -36,6 +36,7 @@ book:
         - src/calculus/12_multivariable_vector_functions.qmd
         - src/calculus/13_vector_field.qmd
         - src/calculus/14_multiple_integrals.qmd
+        - src/calculus/15_green_theorem.qmd
     
 
     # - part : src/figures/figures.qmd
