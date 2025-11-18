@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/calculus/12_multivariable_vector_functions.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +84,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -126,9 +125,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">미적분학</a> 
         <div class="sidebar-tools-main">
@@ -247,6 +244,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다중적분</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/15_green_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -281,6 +284,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#연습문제-3" id="toc-연습문제-3" class="nav-link" data-scroll-target="#연습문제-3">연습문제</a></li>
   </ul></li>
+  <li><a href="#탐구문제" id="toc-탐구문제" class="nav-link" data-scroll-target="#탐구문제">탐구문제</a></li>
   </ul>
 </nav>
     </div>
@@ -811,9 +815,61 @@ d(fg) &amp;= \sum_{i=1}^n \dfrac{\partial (fg)}{\partial x_i} dx_i = f\left(\sum
 \end{aligned}
 \]</span></p>
 </div>
-
-
+<p><br></p>
 </section>
+</section>
+<section id="탐구문제" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="탐구문제">탐구문제</h2>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_13_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.25 (SNU 탐구문제 13.1)</strong></span> <span class="math inline">\(n\)</span>-공간의 한 열린 집합 <span class="math inline">\(U\)</span> 에서 정의된 벡터장 <span class="math inline">\(\boldsymbol{F}\)</span> 가 <span class="math inline">\(\partial X = \partial Y\)</span> 인 <span class="math inline">\(U\)</span> 속의 임의의 곡선 <span class="math inline">\(X,\,Y\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\int_X \boldsymbol{F\cdot}\,d\boldsymbol{s} = \int_Y \boldsymbol{F\cdot}\,d\boldsymbol{s}
+\]</span></p>
+<p>이면, <span class="math inline">\(\boldsymbol{F}\)</span> 는 잠재함수를 가짐을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>주어진 조건으로부터 임의의 닫힌 경로 <span class="math inline">\(C\)</span> 에 대해</p>
+<p><span class="math display">\[
+\oint_C \boldsymbol{F\cdot}\,d\boldsymbol{s}=0
+\]</span></p>
+<p>임을 안다. <span class="math inline">\(P\in U\)</span> 를 중심으로 임의의 <span class="math inline">\(\boldsymbol{e}_i,\,\boldsymbol{e}_j,\,(i\ne j)\)</span> 방향에 대해</p>
+<p><span class="math display">\[
+(P +\epsilon \boldsymbol{e}_i+ \epsilon \boldsymbol{e}_j) - (P -\epsilon \boldsymbol{e}_i+ \epsilon \boldsymbol{e}_j) - (P - \epsilon \boldsymbol{e}_i-\epsilon \boldsymbol{e}_j) - (P+ \epsilon \boldsymbol{e}_i- \epsilon \boldsymbol{e}_j)
+\]</span></p>
+<p>를 잇는 정사각형의 경로를 생각하자. 그렇다면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\oint_C \boldsymbol{F\cdot}\,d\boldsymbol{s} &amp;= \int_{1}^{-1} F_i(P+t\epsilon \boldsymbol{e}_i + \epsilon \boldsymbol{e}_j) dt + \int_{1}^{-1} F_j(P-\epsilon \boldsymbol{e}_i + t\epsilon \boldsymbol{e}_j)\,dt \\[0.3em]
+&amp;\quad + \int_{-1}^{1} F_i(P+t\epsilon \boldsymbol{e}_i - \epsilon \boldsymbol{e}_j)\,dt +\int_{-1}^{1} F_j(P+t\epsilon \boldsymbol{e}_i + t\epsilon \boldsymbol{e}_j)\,dt \\[0.3em]
+&amp;= \int_{1}^{-1} \left[F_i(P) + t\epsilon \partial_i F_i (P) + \epsilon \partial_j F_i (P) + O(\epsilon^2)\right] \,dt  \\[0.3em]
+&amp;\quad + \int_{1}^{-1} \left[F_j(P)  - \epsilon \partial_i F_j (P) + t\epsilon \partial_j F_j (P) + O(\epsilon^2)\right] \,dt \\[0.3em]
+&amp;\quad + \int_{-1}^{1} \left[F_i(P)  +t \epsilon \partial_i F_i (P) -\epsilon \partial_j F_i (P) + O(\epsilon^2)\right] \,dt \\[0.3em]
+&amp;\quad + \int_{-1}^{1} \left[F_j(P)  + \epsilon \partial_i F_j (P) + t\epsilon \partial_j F_j (P) + O(\epsilon^2)\right] \,dt \\[0.3em]
+&amp;= -2\epsilon (\partial_j F_i (P) - \partial_i F_j (P)) + O(\epsilon^2) = 0
+\end{aligned}
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(\boldsymbol{F}\)</span> 는 <span class="math inline">\(U\)</span> 전체에서 국소적으로 닫힌 벡터장이므로 푸앙카레 도움정리에 의해 잠재함수를 가진다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_13_S02" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.26 (SNU 탐구문제 13.2 (적분 인자, integrating factor))</strong></span> 좌표평면의 한 열린 집합에서 정의된 미분형식</p>
+<p><span class="math display">\[
+\omega = a(x,\,y) dx + b(x,\,y)\,dy
+\]</span></p>
+<p>에 어떤 함수 <span class="math inline">\(f(x,\,y) &gt; 0\)</span> 을 곱하면 <span class="math inline">\(f\omega\)</span> 는 국소적으로 완전형식이 됨을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+d(f\omega) =
+\]</span></p>
+<p><em>to be done</em></p>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -868,14 +924,13 @@ d(fg) &amp;= \sum_{i=1}^n \dfrac{\partial (fg)}{\partial x_i} dx_i = f\left(\sum
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

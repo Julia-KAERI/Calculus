@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -34,15 +54,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/calculus/14_multiple_integrals.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +104,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -126,9 +145,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">미적분학</a> 
         <div class="sidebar-tools-main">
@@ -312,6 +329,16 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
+<p><br></p>
+<p>이 장에서는 평면에서의 벡터장의 발산과 그린정리를 다룬다. 여기서 <span class="citation" data-cites="SNUCalculus2013">김홍종 (<a href="../../references.html#ref-SNUCalculus2013" role="doc-biblioref">2000</a>)</span> 에서는 벡터장에 대한 연산자 <span class="math inline">\(\text{div},\,\text{rot}\)</span> 를 정하여 사용했지만 여기서는 아래와 같이 <span class="math inline">\(\nabla\)</span> 연산자를 사용하기로 한다.</p>
+<p><span class="math display">\[
+\boxed{
+\begin{aligned}
+\nabla \boldsymbol{\cdot}\boldsymbol{F} &amp;:= \partial_x F_x + \partial_y F_y,\\[0.3em]
+\nabla \times \boldsymbol{F} &amp;:= \partial x F_y - \partial_y F_x.
+\end{aligned}
+}
+\]</span></p>
 <p><br></p>
 <section id="벡터장과-발산" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="벡터장과-발산"><span class="header-section-number">15.1</span> 벡터장과 발산</h2>
@@ -510,12 +537,39 @@ D=\{(x,\,y)\in \mathbb{R}^2 : y\ge 0\}
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
-\int_{\partial D} Q(x,\,y)\, dy =
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\partial D\)</span> 는 <span class="math inline">\(y=0\)</span> 이며 따라서 <span class="math display">\[
+\int_{\partial D} Q(x,\,y)\, dy = 0.
 \]</span></p>
+<p>또한 <span class="math display">\[
+\iint_D \dfrac{\partial Q}{\partial x}\,dx\,dy= \int_{-\infty}^\infty \int_{0}^\infty \dfrac{1}{1 + x^2} e^{-y^2} \,dy\,dx = \pi \sqrt{\dfrac{\pi}{2}} \ne 0
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_5_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.9 (SNU 15.5.8)</strong></span> 평면에서 단순폐곡선 <span class="math inline">\(C\)</span> 의 내부 <span class="math inline">\(D\)</span> 가 원점을 포함하면, 각원소 벡터장 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\int_C \boldsymbol{a}\boldsymbol{\cdot}d\boldsymbol{s} = 2\pi, \qquad \iint_D \nabla \times \boldsymbol{a}\,dV_2=0
+\]</span></p>
+<p>임을 보이고, 이것이 왜 그린정리에 모순되지 않는지를 설명하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>각원소 벡터장 <span class="math inline">\(\boldsymbol{a}= -\dfrac{y}{x^2+y^2}\boldsymbol{i} + \dfrac{x}{x^2+y^2}\boldsymbol{j}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\nabla \times \boldsymbol{a} &amp;= \dfrac{1}{x^2+y^2} - \dfrac{2x^2}{(x^2+y^2)^2} + \dfrac{1}{x^2+y^2} - \dfrac{2y^2}{(x^2 + y^2)^2} =0
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(\iint_D \nabla \times \boldsymbol{a}\,dV_2=0\)</span> 이다.</p>
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-SNUCalculus2013" class="csl-entry" role="listitem">
+김홍종. 2000. <em>미적분학 1, 2</em>. 2nd ed. 서울대학교 출판문화원.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -570,14 +624,13 @@ D=\{(x,\,y)\in \mathbb{R}^2 : y\ge 0\}
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -829,3 +829,88 @@ d(fg) &= \sum_{i=1}^n \dfrac{\partial (fg)}{\partial x_i} dx_i = f\left(\sum_{i=
 $$
 
 :::
+
+</br>
+
+## 탐구문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_13_S01} 
+
+#### SNU 탐구문제 13.1
+
+$n$-공간의 한 열린 집합 $U$ 에서 정의된 벡터장 $\bf{F}$ 가 $\partial X = \partial Y$ 인 $U$ 속의 임의의 곡선 $X,\,Y$ 에 대하여
+
+$$
+\int_X \bf{F\cdot}\,d\bf{s} = \int_Y \bf{F\cdot}\,d\bf{s}
+$$
+
+이면, $\bf{F}$ 는 잠재함수를 가짐을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+주어진 조건으로부터 임의의 닫힌 경로 $C$ 에 대해
+
+$$
+\oint_C \bf{F\cdot}\,d\bf{s}=0
+$$ 
+
+임을 안다. $P\in U$ 를 중심으로 임의의 $\bf{e}_i,\,\bf{e}_j,\,(i\ne j)$ 방향에 대해 
+
+$$
+(P +\epsilon \bf{e}_i+ \epsilon \bf{e}_j) - (P -\epsilon \bf{e}_i+ \epsilon \bf{e}_j) - (P - \epsilon \bf{e}_i-\epsilon \bf{e}_j) - (P+ \epsilon \bf{e}_i- \epsilon \bf{e}_j)
+$$
+
+를 잇는 정사각형의 경로를 생각하자. 그렇다면
+
+$$
+\begin{aligned}
+\oint_C \bf{F\cdot}\,d\bf{s} &= \int_{1}^{-1} F_i(P+t\epsilon \bf{e}_i + \epsilon \bf{e}_j) dt + \int_{1}^{-1} F_j(P-\epsilon \bf{e}_i + t\epsilon \bf{e}_j)\,dt \\[0.3em]
+&\quad + \int_{-1}^{1} F_i(P+t\epsilon \bf{e}_i - \epsilon \bf{e}_j)\,dt +\int_{-1}^{1} F_j(P+t\epsilon \bf{e}_i + t\epsilon \bf{e}_j)\,dt \\[0.3em]
+&= \int_{1}^{-1} \left[F_i(P) + t\epsilon \partial_i F_i (P) + \epsilon \partial_j F_i (P) + O(\epsilon^2)\right] \,dt  \\[0.3em]
+&\quad + \int_{1}^{-1} \left[F_j(P)  - \epsilon \partial_i F_j (P) + t\epsilon \partial_j F_j (P) + O(\epsilon^2)\right] \,dt \\[0.3em]
+&\quad + \int_{-1}^{1} \left[F_i(P)  +t \epsilon \partial_i F_i (P) -\epsilon \partial_j F_i (P) + O(\epsilon^2)\right] \,dt \\[0.3em]
+&\quad + \int_{-1}^{1} \left[F_j(P)  + \epsilon \partial_i F_j (P) + t\epsilon \partial_j F_j (P) + O(\epsilon^2)\right] \,dt \\[0.3em]
+&= -2\epsilon (\partial_j F_i (P) - \partial_i F_j (P)) + O(\epsilon^2) = 0
+\end{aligned}
+$$
+
+이다. 즉 $\bf{F}$ 는 $U$ 전체에서 국소적으로 닫힌 벡터장이므로 푸앙카레 도움정리에 의해 잠재함수를 가진다. 
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_13_S02} 
+
+#### SNU 탐구문제 13.2 (적분 인자, integrating factor)
+
+좌표평면의 한 열린 집합에서 정의된 미분형식
+
+$$
+\omega = a(x,\,y) dx + b(x,\,y)\,dy
+$$
+
+에 어떤 함수 $f(x,\,y) > 0$ 을 곱하면 $f\omega$ 는 국소적으로 완전형식이 됨을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+d(f\omega) = 
+$$
+
+
+*to be done*
+
+
+:::

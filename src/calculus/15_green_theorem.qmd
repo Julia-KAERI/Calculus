@@ -9,7 +9,22 @@ crossref:
 
 </br>
 
+
+이 장에서는 평면에서의 벡터장의 발산과 그린정리를 다룬다. 여기서 @SNUCalculus2013 에서는 벡터장에 대한 연산자 $\text{div},\,\text{rot}$ 를 정하여 사용했지만 여기서는 아래와 같이 $\nabla$ 연산자를 사용하기로 한다.
+
+$$
+\boxed{
+\begin{aligned}
+\nabla \bcdot \bf{F} &:= \partial_x F_x + \partial_y F_y,\\[0.3em]
+\nabla \times \bf{F} &:= \partial x F_y - \partial_y F_x.
+\end{aligned}
+}
+$$
+
+</br>
+
 ## 벡터장과 발산
+
 
 ### 연습문제
 
@@ -315,7 +330,49 @@ $$
 
 ::: {.solution}
 
+$\partial D$ 는 $y=0$ 이며 따라서
 $$
-\int_{\partial D} Q(x,\,y)\, dy = 
+\int_{\partial D} Q(x,\,y)\, dy = 0. 
 $$
+
+또한 
+$$
+ \iint_D \dfrac{\partial Q}{\partial x}\,dx\,dy= \int_{-\infty}^\infty \int_{0}^\infty \dfrac{1}{1 + x^2} e^{-y^2} \,dy\,dx = \pi \sqrt{\dfrac{\pi}{2}} \ne 0
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_5_8} 
+
+#### SNU 15.5.8
+
+평면에서 단순폐곡선 $C$ 의 내부 $D$ 가 원점을 포함하면, 각원소 벡터장 $\bf{a}$ 에 대하여
+
+$$
+\int_C \bf{a}\bcdot d\bf{s} = 2\pi, \qquad \iint_D \nabla \times \bf{a}\,dV_2=0
+$$
+
+임을 보이고,  이것이 왜 그린정리에 모순되지 않는지를 설명하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+각원소 벡터장 $\bf{a}= -\dfrac{y}{x^2+y^2}\bf{i} + \dfrac{x}{x^2+y^2}\bf{j}$ 에 대해
+
+$$
+\begin{aligned}
+\nabla \times \bf{a} &= \dfrac{1}{x^2+y^2} - \dfrac{2x^2}{(x^2+y^2)^2} + \dfrac{1}{x^2+y^2} - \dfrac{2y^2}{(x^2 + y^2)^2} =0
+\end{aligned}
+$$
+
+이므로 $\iint_D \nabla \times \bf{a}\,dV_2=0$ 이다.
+
+
+
+
 :::
