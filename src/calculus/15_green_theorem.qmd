@@ -277,7 +277,6 @@ $$
 
 :::
 
-
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CAL_15_5_3} 
@@ -354,7 +353,7 @@ $$
 \int_C \bf{a}\bcdot d\bf{s} = 2\pi, \qquad \iint_D \nabla \times \bf{a}\,dV_2=0
 $$
 
-임을 보이고,  이것이 왜 그린정리에 모순되지 않는지를 설명하라.
+임을 보이고,  이것이 왜 그린정리에 모순되지 않는지를 설명하라. 
 
 :::
 
@@ -372,7 +371,274 @@ $$
 
 이므로 $\iint_D \nabla \times \bf{a}\,dV_2=0$ 이다.
 
+각원소 벡터장의 적분은 단순폐곡선에 대해 $2\pi$ 임을 안다. (@SNUCalculus2013 기본연습문제 2.4.1). 
+
+그린정리는 영역 $D$ 의 모든 점에서 벡터장이 정의될 것을 요구하지만 각원소 벡터장은 원점에서 정의되지 않는다. 따라서 모순되지 않는다.
+:::
+
+<br>
+
+## 탐구문제
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_S01} 
+
+#### SNU 탐구문제 15.1
+
+좌표평면 전체에서 정의된 일급함수 $h(x,\,y)$ 에 대하여
+
+$$
+\bf{F}(x,\,y) = h(x,\,y) \bf{A}(x,\,y),\qquad \bf{A}(x,\,y) := \dfrac{(x,\,y)}{x^2+y^2}
+$$
+
+라고 하자. 이 때 $\nabla \bcdot \bf{F}=0$ 이면 $h(x,\,y)$ 는 상수함수임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$h_x = \partial_x h,\, h_y = \partial_y h$ 라고 하자. 
+$$
+\begin{aligned}
+\nabla \bcdot \bf{F} &= (\nabla h) \bf{ \cdot A} + h (\nabla \bf{\cdot A}) \\[0.3em]
+&= (\partial_x h)A_x + (\partial_y h) A_y + h \underbrace{\left(\dfrac{2}{x^2+y^2} - \dfrac{2x^2+2y^2}{(x^2+y^2)^2}\right)}_{\Large = 0} \\[0.3em]
+&= \dfrac{(\partial_x h)x + (\partial_y h )y}{x^2+y^2} = 0
+\end{aligned}
+$$
+
+이므로 임의의 $x,\,y$ 에 대해 
+
+$$
+(\partial_x h)x + (\partial_y h )y = 0
+$$
+
+이다. 따라서 $\partial_x h = \partial_y h = 0$ 이므로 $h$ 는 상수함수이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_S02} 
+
+#### SNU 탐구문제 15.2
+
+좌표평면의 한 열린 집합에서 정의된 함수 $P(x,\,y),\,Q(x,\,y)$ 와 두 벡터 $\bf{v},\,\bf{w}\in \R^2$ 에 대하여 벡터장 $\bf{F}$ 가
+
+$$
+\bf{F}(x,\,y) = P(x,\,y)\bf{v}+ Q(x,\,y)\bf{w}
+$$
+
+라고 하자. 이때
+
+$$
+\nabla \bcdot \bf{F} = D_\bf{v}P + D_\bf{w}Q
+$$
+
+임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\bf{v} = \sum_{i=1}^2 v_i\bf{e}_i$, $\bf{w} = \sum_{i=1}^2 w_i \bf{e}_i$ 라고 하자.
+
+$$
+\begin{aligned}
+\nabla \bcdot \bf{F} &= \nabla \bcdot \left[\sum_{i=1}^2 \left(P(x,\,y)v_i + Q(x,\,y)w_i\right) \bf{e}_i\right] \\[0.3em]
+&= \sum_{i=1}^2 (\partial_i P)v_i + (\partial_i Q) w_i =  D_\bf{v}P + D_\bf{w}Q
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_S03} 
+
+#### SNU 탐구문제 15.3
+
+좌표평면의 열린 집합 $U$ 에서 정의된 이급 벡터장
+
+$$
+\bf{F}= P(x,\,y)\bf{i} + Q(x,\,y)\bf{j}
+$$
+
+에 대하여 다음을 보여라.
+
+($i$) 임의의 단순폐곡선 $C\subset U$ 에 대하여 $\displaystyle \int_C\bf{F}\bcdot d\bf{s} =0$ 이면 $\partial_y P = \partial_x Q$ 이다.
+
+($ii$) 임의의 단순폐곡선 $C\subset U$ 에 대하여 $\displaystyle \int_C\bf{F}\bcdot \bf{n} ds =0$ 이면 $\partial_x P = - \partial_y Q$ 이다.
+
+($iii$) 임의의 단순폐곡선 $C\subset U$ 에 대하여 $\displaystyle \int_C \bf{F}\bcdot d\bf{s}=0=\int_C \bf{F\cdot n}\,ds$ 이면
+
+$$
+\left(\dfrac{\partial^2}{\partial x^2} + \dfrac{\partial^2}{\partial y^2}\right) P = 0,\qquad \left(\dfrac{\partial^2}{\partial x^2} + \dfrac{\partial^2}{\partial y^2}\right) Q=0
+$$
+
+이다.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($i$) $\nabla \times \bf{F}=0$.
+
+($ii$) $\nabla \bcdot \bf{F} =0$
+
+($iii$) $(\partial_x^2 + \partial_y^2)P=0$ 임을 보인다. $Q$ 에 대해서도 같은 방법으로 보일 수 있다.
+
+$$
+(\partial_x^2 + \partial_y^2) P = \partial_x(-\partial_y Q) + \partial_y (\partial_x Q)= -\partial_x \partial_y Q + \partial_y \partial_x Q = 0
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_S04} 
+
+#### SNU 탐구문제 15.4
+
+평면벡터장 $\bf{F}(x,\,y)$ 중에서
+
+$$
+\nabla \bcdot \bf{F}=0,\qquad \nabla \times \bf{F}=0
+$$
+
+인 보기를 들라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+상수 벡터장.
+
+$$
+\bf{B} = \dfrac{(-y,\,x)}{x^2+y^2}
+$$
+
+:::
 
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CAL_15_S05} 
+
+#### SNU 탐구문제 15.5
+
+좌표평면에서 원점을 기준으로 점 $(x,\,y)$ 를 $90^\circ$ 회전시킨 것을 $(x,\,y)^\ast$ 라고 두자.
+
+$$
+(x,\,y)^\ast  := (-y,\,x).
+$$
+
+마찬가지로 평면 벡터장 $\bf{F}(x,\,y) = f_1(x,\,y)\bf{i} + f_2(x,\,y)\bf{j}$ 를 $90^\circ$ 회전시킨 것을 $\bf{F}^\ast$ 로 두자.
+
+$$
+\bf{F}^\ast = -f_2 \bf{i} + \bf{f}_1 \bf{j}.
+$$
+
+이제 함수 $g(x,\,y)$ 와 벡터장 $\bf{F}(x,\,y)$ 에 대하여
+
+$$
+\nabla \times (g\bf{F}) = -(\nabla g) \bcdot \bf{F}^\ast + g (\nabla \times \bf{F})
+$$
+
+를 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\nabla \times (g\bf{F}) &= \partial_x (gf_2) - \partial_y (gf_1) \\[0.3em]
+&=f_2 (\partial_x g) + g (\partial_x f_2) - f_1 (\partial_y g) - g(\partial_y f_1) \\[0.3em]
+&= \underbrace{\left[(\partial_x g) f_2 - (\partial_y g) f_1 \right]}_{\Large = -(\nabla g) \bcdot \bf{F}^\ast} + \underbrace{g( \partial_x f_2 - \partial_y f_1)}_{\Large = g (\nabla \times \bf{F})} \\[0.3em]
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_S06} 
+
+#### SNU 탐구문제 15.6
+
+각원소 벡터장 $\bf{a}$ 와 일급사상 $f(r)$ 에 대하여 벡터장 $\bf{F}(x,\,y) = f(\sqrt{x^2+y^2})\bf{a}(x,\,y)$ 가 비회전장이면 $f$ 는 상수함수임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution} 
+
+@exr-CAL_15_S05 의 벡터 회전 개념으로부터
+
+$$
+\bf{a}^\ast = - \dfrac{(x,\,y)}{x^2+y^2} = - \dfrac{X}{|X|^2}
+$$
+
+임을 안다. 또한 $\nabla \times \bf{a}=0$ 임을 안다. $\bf{F}$ 가 비회전장이므로 
+
+$$
+0 = \nabla \times \bf{F} = \nabla \times (f\bf{a}) = -(\nabla f)\cdot \bf{a}^\ast = \dfrac{\partial f}{\partial r}\dfrac{1}{|X|}
+$$
+
+이다. $f=f(r)$ 이므로 $\nabla f = \dfrac{\partial f}{\partial r} \dfrac{X}{|X|}$ 임을 사용하였다. 따라서 $\dfrac{\partial f}{\partial r} = 0$ 이며 $f$ 는 상수함수이다.
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_S07} 
+
+#### SNU 탐구문제 15.7
+
+벡터 $(t_1,\ldots,\,t_n)$ 과 $n$ 차 직교 행렬 $(a_{ij})$ 에 대하여 $n$-공간에 새로운 좌표계
+
+$$
+y_i = \sum_{j=1}^n a_{ij} x_j + t_i,\qquad \qquad (i=1,\ldots,\,n)
+$$
+
+가 주어졌다고 하자. 이 때 벡터장 $\bf{F}$ 의 발산은 좌표계와 무관함을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$(x_1,\ldots,\,x_n)$ 좌표계의 단위벡터를 $(\bf{e}_1,\ldots,\,\bf{e}_n)$ 이라고 하고 $(y_1,\ldots,\,y_n)$ 좌표계의 단위행렬을 $(\bf{f}_1,\ldots,\,\bf{f}_n)$ 이라고 하자 $A=(a_{ij})$ 에 대해 $A^{-1} = A^T = (a_{ji})$ 이므로 
+
+$$
+\bf{F} = \sum_j F_j \bf{e}_j = \sum_i \overline{F}_i \bf{f}_i = \sum_i \sum_j \overline{F}_i (a_{ij})^{-1}\bf{e}_j  \sum_i \sum_j \overline{F}_i a_{ji}\bf{e}_j
+$$
+
+이다. 즉
+
+$$
+F_j = \sum_i a_{ji}\overline{F}_i 
+$$
+
+이다. 이로부터,
+
+$$
+\begin{aligned}
+\sum_i \dfrac{\partial F_i}{\partial x_i} &= \sum_i \sum_j \dfrac{\partial y_j}{\partial x_i}\dfrac{\partial F_i}{\partial y_j} = \sum_{j, k} \underbrace{\sum_i a_{ji} a_{ik}}_{\large = \delta_{jk}} \dfrac{\partial \overline{F}_k}{\partial y_j} \\[0.3em]
+&= \sum_{j} \dfrac{\partial \overline{F}_j}{\partial y_j}
+\end{aligned}
+$$
 :::

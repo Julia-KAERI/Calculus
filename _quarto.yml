@@ -37,7 +37,8 @@ book:
         - src/calculus/13_vector_field.qmd
         - src/calculus/14_multiple_integrals.qmd
         - src/calculus/15_green_theorem.qmd
-    
+        - src/calculus/16_surface_integral.qmd
+
 
     # - part : src/figures/figures.qmd
     #   chapters :

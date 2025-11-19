@@ -296,6 +296,7 @@ window.Quarto = {
   <li><a href="#평면-벡터장과-회전도" id="toc-평면-벡터장과-회전도" class="nav-link" data-scroll-target="#평면-벡터장과-회전도"><span class="header-section-number">15.3</span> 평면 벡터장과 회전도</a></li>
   <li><a href="#경계와-향" id="toc-경계와-향" class="nav-link" data-scroll-target="#경계와-향"><span class="header-section-number">15.4</span> 경계와 향</a></li>
   <li><a href="#그린-정리" id="toc-그린-정리" class="nav-link" data-scroll-target="#그린-정리"><span class="header-section-number">15.5</span> 그린 정리</a></li>
+  <li><a href="#탐구문제" id="toc-탐구문제" class="nav-link" data-scroll-target="#탐구문제"><span class="header-section-number">15.6</span> 탐구문제</a></li>
   </ul>
 </nav>
     </div>
@@ -562,6 +563,170 @@ D=\{(x,\,y)\in \mathbb{R}^2 : y\ge 0\}
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(\iint_D \nabla \times \boldsymbol{a}\,dV_2=0\)</span> 이다.</p>
+<p>각원소 벡터장의 적분은 단순폐곡선에 대해 <span class="math inline">\(2\pi\)</span> 임을 안다. (<span class="citation" data-cites="SNUCalculus2013">김홍종 (<a href="../../references.html#ref-SNUCalculus2013" role="doc-biblioref">2000</a>)</span> 기본연습문제 2.4.1).</p>
+<p>그린정리는 영역 <span class="math inline">\(D\)</span> 의 모든 점에서 벡터장이 정의될 것을 요구하지만 각원소 벡터장은 원점에서 정의되지 않는다. 따라서 모순되지 않는다.</p>
+</div>
+<p><br></p>
+</section>
+<section id="탐구문제" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="탐구문제"><span class="header-section-number">15.6</span> 탐구문제</h2>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.10 (SNU 탐구문제 15.1)</strong></span> 좌표평면 전체에서 정의된 일급함수 <span class="math inline">\(h(x,\,y)\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\boldsymbol{F}(x,\,y) = h(x,\,y) \boldsymbol{A}(x,\,y),\qquad \boldsymbol{A}(x,\,y) := \dfrac{(x,\,y)}{x^2+y^2}
+\]</span></p>
+<p>라고 하자. 이 때 <span class="math inline">\(\nabla \boldsymbol{\cdot}\boldsymbol{F}=0\)</span> 이면 <span class="math inline">\(h(x,\,y)\)</span> 는 상수함수임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(h_x = \partial_x h,\, h_y = \partial_y h\)</span> 라고 하자. <span class="math display">\[
+\begin{aligned}
+\nabla \boldsymbol{\cdot}\boldsymbol{F} &amp;= (\nabla h) \boldsymbol{ \cdot A} + h (\nabla \boldsymbol{\cdot A}) \\[0.3em]
+&amp;= (\partial_x h)A_x + (\partial_y h) A_y + h \underbrace{\left(\dfrac{2}{x^2+y^2} - \dfrac{2x^2+2y^2}{(x^2+y^2)^2}\right)}_{\Large = 0} \\[0.3em]
+&amp;= \dfrac{(\partial_x h)x + (\partial_y h )y}{x^2+y^2} = 0
+\end{aligned}
+\]</span></p>
+<p>이므로 임의의 <span class="math inline">\(x,\,y\)</span> 에 대해</p>
+<p><span class="math display">\[
+(\partial_x h)x + (\partial_y h )y = 0
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(\partial_x h = \partial_y h = 0\)</span> 이므로 <span class="math inline">\(h\)</span> 는 상수함수이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S02" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.11 (SNU 탐구문제 15.2)</strong></span> 좌표평면의 한 열린 집합에서 정의된 함수 <span class="math inline">\(P(x,\,y),\,Q(x,\,y)\)</span> 와 두 벡터 <span class="math inline">\(\boldsymbol{v},\,\boldsymbol{w}\in \mathbb{R}^2\)</span> 에 대하여 벡터장 <span class="math inline">\(\boldsymbol{F}\)</span> 가</p>
+<p><span class="math display">\[
+\boldsymbol{F}(x,\,y) = P(x,\,y)\boldsymbol{v}+ Q(x,\,y)\boldsymbol{w}
+\]</span></p>
+<p>라고 하자. 이때</p>
+<p><span class="math display">\[
+\nabla \boldsymbol{\cdot}\boldsymbol{F} = D_\boldsymbol{v}P + D_\boldsymbol{w}Q
+\]</span></p>
+<p>임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{v} = \sum_{i=1}^2 v_i\boldsymbol{e}_i\)</span>, <span class="math inline">\(\boldsymbol{w} = \sum_{i=1}^2 w_i \boldsymbol{e}_i\)</span> 라고 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\nabla \boldsymbol{\cdot}\boldsymbol{F} &amp;= \nabla \boldsymbol{\cdot}\left[\sum_{i=1}^2 \left(P(x,\,y)v_i + Q(x,\,y)w_i\right) \boldsymbol{e}_i\right] \\[0.3em]
+&amp;= \sum_{i=1}^2 (\partial_i P)v_i + (\partial_i Q) w_i =  D_\boldsymbol{v}P + D_\boldsymbol{w}Q
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S03" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.12 (SNU 탐구문제 15.3)</strong></span> 좌표평면의 열린 집합 <span class="math inline">\(U\)</span> 에서 정의된 이급 벡터장</p>
+<p><span class="math display">\[
+\boldsymbol{F}= P(x,\,y)\boldsymbol{i} + Q(x,\,y)\boldsymbol{j}
+\]</span></p>
+<p>에 대하여 다음을 보여라.</p>
+<p>(<span class="math inline">\(i\)</span>) 임의의 단순폐곡선 <span class="math inline">\(C\subset U\)</span> 에 대하여 <span class="math inline">\(\displaystyle \int_C\boldsymbol{F}\boldsymbol{\cdot}d\boldsymbol{s} =0\)</span> 이면 <span class="math inline">\(\partial_y P = \partial_x Q\)</span> 이다.</p>
+<p>(<span class="math inline">\(ii\)</span>) 임의의 단순폐곡선 <span class="math inline">\(C\subset U\)</span> 에 대하여 <span class="math inline">\(\displaystyle \int_C\boldsymbol{F}\boldsymbol{\cdot}\boldsymbol{n} ds =0\)</span> 이면 <span class="math inline">\(\partial_x P = - \partial_y Q\)</span> 이다.</p>
+<p>(<span class="math inline">\(iii\)</span>) 임의의 단순폐곡선 <span class="math inline">\(C\subset U\)</span> 에 대하여 <span class="math inline">\(\displaystyle \int_C \boldsymbol{F}\boldsymbol{\cdot}d\boldsymbol{s}=0=\int_C \boldsymbol{F\cdot n}\,ds\)</span> 이면</p>
+<p><span class="math display">\[
+\left(\dfrac{\partial^2}{\partial x^2} + \dfrac{\partial^2}{\partial y^2}\right) P = 0,\qquad \left(\dfrac{\partial^2}{\partial x^2} + \dfrac{\partial^2}{\partial y^2}\right) Q=0
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(i\)</span>) <span class="math inline">\(\nabla \times \boldsymbol{F}=0\)</span>.</p>
+<p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(\nabla \boldsymbol{\cdot}\boldsymbol{F} =0\)</span></p>
+<p>(<span class="math inline">\(iii\)</span>) <span class="math inline">\((\partial_x^2 + \partial_y^2)P=0\)</span> 임을 보인다. <span class="math inline">\(Q\)</span> 에 대해서도 같은 방법으로 보일 수 있다.</p>
+<p><span class="math display">\[
+(\partial_x^2 + \partial_y^2) P = \partial_x(-\partial_y Q) + \partial_y (\partial_x Q)= -\partial_x \partial_y Q + \partial_y \partial_x Q = 0
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S04" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.13 (SNU 탐구문제 15.4)</strong></span> 평면벡터장 <span class="math inline">\(\boldsymbol{F}(x,\,y)\)</span> 중에서</p>
+<p><span class="math display">\[
+\nabla \boldsymbol{\cdot}\boldsymbol{F}=0,\qquad \nabla \times \boldsymbol{F}=0
+\]</span></p>
+<p>인 보기를 들라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>상수 벡터장.</p>
+<p><span class="math display">\[
+\boldsymbol{B} = \dfrac{(-y,\,x)}{x^2+y^2}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S05" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.14 (SNU 탐구문제 15.5)</strong></span> 좌표평면에서 원점을 기준으로 점 <span class="math inline">\((x,\,y)\)</span> 를 <span class="math inline">\(90^\circ\)</span> 회전시킨 것을 <span class="math inline">\((x,\,y)^\ast\)</span> 라고 두자.</p>
+<p><span class="math display">\[
+(x,\,y)^\ast  := (-y,\,x).
+\]</span></p>
+<p>마찬가지로 평면 벡터장 <span class="math inline">\(\boldsymbol{F}(x,\,y) = f_1(x,\,y)\boldsymbol{i} + f_2(x,\,y)\boldsymbol{j}\)</span> 를 <span class="math inline">\(90^\circ\)</span> 회전시킨 것을 <span class="math inline">\(\boldsymbol{F}^\ast\)</span> 로 두자.</p>
+<p><span class="math display">\[
+\boldsymbol{F}^\ast = -f_2 \boldsymbol{i} + \boldsymbol{f}_1 \boldsymbol{j}.
+\]</span></p>
+<p>이제 함수 <span class="math inline">\(g(x,\,y)\)</span> 와 벡터장 <span class="math inline">\(\boldsymbol{F}(x,\,y)\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\nabla \times (g\boldsymbol{F}) = -(\nabla g) \boldsymbol{\cdot}\boldsymbol{F}^\ast + g (\nabla \times \boldsymbol{F})
+\]</span></p>
+<p>를 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+\nabla \times (g\boldsymbol{F}) &amp;= \partial_x (gf_2) - \partial_y (gf_1) \\[0.3em]
+&amp;=f_2 (\partial_x g) + g (\partial_x f_2) - f_1 (\partial_y g) - g(\partial_y f_1) \\[0.3em]
+&amp;= \underbrace{\left[(\partial_x g) f_2 - (\partial_y g) f_1 \right]}_{\Large = -(\nabla g) \boldsymbol{\cdot}\boldsymbol{F}^\ast} + \underbrace{g( \partial_x f_2 - \partial_y f_1)}_{\Large = g (\nabla \times \boldsymbol{F})} \\[0.3em]
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S06" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.15 (SNU 탐구문제 15.6)</strong></span> 각원소 벡터장 <span class="math inline">\(\boldsymbol{a}\)</span> 와 일급사상 <span class="math inline">\(f(r)\)</span> 에 대하여 벡터장 <span class="math inline">\(\boldsymbol{F}(x,\,y) = f(\sqrt{x^2+y^2})\boldsymbol{a}(x,\,y)\)</span> 가 비회전장이면 <span class="math inline">\(f\)</span> 는 상수함수임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CAL_15_S05" class="quarto-xref">연습문제&nbsp;<span>15.14</span></a> 의 벡터 회전 개념으로부터</p>
+<p><span class="math display">\[
+\boldsymbol{a}^\ast = - \dfrac{(x,\,y)}{x^2+y^2} = - \dfrac{X}{|X|^2}
+\]</span></p>
+<p>임을 안다. 또한 <span class="math inline">\(\nabla \times \boldsymbol{a}=0\)</span> 임을 안다. <span class="math inline">\(\boldsymbol{F}\)</span> 가 비회전장이므로</p>
+<p><span class="math display">\[
+0 = \nabla \times \boldsymbol{F} = \nabla \times (f\boldsymbol{a}) = -(\nabla f)\cdot \boldsymbol{a}^\ast = \dfrac{\partial f}{\partial r}\dfrac{1}{|X|}
+\]</span></p>
+<p>이다. <span class="math inline">\(f=f(r)\)</span> 이므로 <span class="math inline">\(\nabla f = \dfrac{\partial f}{\partial r} \dfrac{X}{|X|}\)</span> 임을 사용하였다. 따라서 <span class="math inline">\(\dfrac{\partial f}{\partial r} = 0\)</span> 이며 <span class="math inline">\(f\)</span> 는 상수함수이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_S07" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.16 (SNU 탐구문제 15.7)</strong></span> 벡터 <span class="math inline">\((t_1,\ldots,\,t_n)\)</span> 과 <span class="math inline">\(n\)</span> 차 직교 행렬 <span class="math inline">\((a_{ij})\)</span> 에 대하여 <span class="math inline">\(n\)</span>-공간에 새로운 좌표계</p>
+<p><span class="math display">\[
+y_i = \sum_{j=1}^n a_{ij} x_j + t_i,\qquad \qquad (i=1,\ldots,\,n)
+\]</span></p>
+<p>가 주어졌다고 하자. 이 때 벡터장 <span class="math inline">\(\boldsymbol{F}\)</span> 의 발산은 좌표계와 무관함을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((x_1,\ldots,\,x_n)\)</span> 좌표계의 단위벡터를 <span class="math inline">\((\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n)\)</span> 이라고 하고 <span class="math inline">\((y_1,\ldots,\,y_n)\)</span> 좌표계의 단위행렬을 <span class="math inline">\((\boldsymbol{f}_1,\ldots,\,\boldsymbol{f}_n)\)</span> 이라고 하자 <span class="math inline">\(A=(a_{ij})\)</span> 에 대해 <span class="math inline">\(A^{-1} = A^T = (a_{ji})\)</span> 이므로</p>
+<p><span class="math display">\[
+\boldsymbol{F} = \sum_j F_j \boldsymbol{e}_j = \sum_i \overline{F}_i \boldsymbol{f}_i = \sum_i \sum_j \overline{F}_i (a_{ij})^{-1}\boldsymbol{e}_j  \sum_i \sum_j \overline{F}_i a_{ji}\boldsymbol{e}_j
+\]</span></p>
+<p>이다. 즉</p>
+<p><span class="math display">\[
+F_j = \sum_i a_{ji}\overline{F}_i
+\]</span></p>
+<p>이다. 이로부터,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_i \dfrac{\partial F_i}{\partial x_i} &amp;= \sum_i \sum_j \dfrac{\partial y_j}{\partial x_i}\dfrac{\partial F_i}{\partial y_j} = \sum_{j, k} \underbrace{\sum_i a_{ji} a_{ik}}_{\large = \delta_{jk}} \dfrac{\partial \overline{F}_k}{\partial y_j} \\[0.3em]
+&amp;= \sum_{j} \dfrac{\partial \overline{F}_j}{\partial y_j}
+\end{aligned}
+\]</span></p>
 </div>
 
 

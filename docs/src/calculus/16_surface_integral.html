@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>미적분학</title>
+<title>16&nbsp; 면적분과 발산정리 및 스토크스 정리 – 미적분학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/calculus/01_series.html" rel="next">
-<link href="../../index.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../src/calculus/15_green_theorem.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -90,6 +70,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../custom.css">
 </head>
@@ -103,7 +112,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/16_surface_integral.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">면적분과 발산정리 및 스토크스 정리</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,7 +153,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../src/calculus/calculus.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../src/calculus/calculus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">미적분학</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -241,6 +250,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/16_surface_integral.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">면적분과 발산정리 및 스토크스 정리</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -259,10 +274,9 @@ div.csl-indent {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#참고자료" id="toc-참고자료" class="nav-link active" data-scroll-target="#참고자료">참고자료</a>
+  <li><a href="#벡터장과-발산" id="toc-벡터장과-발산" class="nav-link active" data-scroll-target="#벡터장과-발산"><span class="header-section-number">16.1</span> 벡터장과 발산</a>
   <ul class="collapse">
-  <li><a href="#참고-도서" id="toc-참고-도서" class="nav-link" data-scroll-target="#참고-도서">참고 도서</a></li>
-  <li><a href="#기타" id="toc-기타" class="nav-link" data-scroll-target="#기타">기타</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -270,9 +284,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/16_surface_integral.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">면적분과 발산정리 및 스토크스 정리</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">미적분학</h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">면적분과 발산정리 및 스토크스 정리</span></h1>
 </div>
 
 
@@ -289,45 +303,41 @@ div.csl-indent {
 </header>
 
 
-<section id="참고자료" class="level2">
-<h2 class="anchored" data-anchor-id="참고자료">참고자료</h2>
-<section id="참고-도서" class="level3">
-<h3 class="anchored" data-anchor-id="참고-도서">참고 도서</h3>
-<ul>
-<li><span class="citation" data-cites="SNUCalculus2013">김홍종 (<a href="../../references.html#ref-SNUCalculus2013" role="doc-biblioref">2000</a>)</span> : 미적분학</li>
-<li><span class="citation" data-cites="Spivak1965">Spivak (<a href="../../references.html#ref-Spivak1965" role="doc-biblioref">1965</a>)</span> : Calculus on Manifolds</li>
-<li><span class="citation" data-cites="MunkresAnalysis">Munkres (<a href="../../references.html#ref-MunkresAnalysis" role="doc-biblioref">2019</a>)</span> : Analysis on Manifolds</li>
-<li><span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span> : Principles of Mathematical Analysis</li>
-<li><span class="citation" data-cites="DoCarmo1998differential">Do Carmo (<a href="../../references.html#ref-DoCarmo1998differential" role="doc-biblioref">1998</a>)</span> : Differential Forms and Applications</li>
-</ul>
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
 <p><br></p>
-</section>
-<section id="기타" class="level3">
-<h3 class="anchored" data-anchor-id="기타">기타</h3>
-<ul>
-<li><a href="http://www.petraaxolotl.com/mathematics/calculus-on-manifolds/">All axolotls enjoy mathematics. But this one also loves physics</a> : Spivak errata and solution</li>
-<li><a href="https://www.ms.uky.edu/~ken/ma570/">MA-570 Summer 1999</a> Lecture course. Solution to Spivak’s <em>Calculus on Manifolds</em> are presented.</li>
-<li><a href="https://www.jirka.org/spivak-errata.html">Spivak - Calculus on Manifolds, Comments and Errata @ www.jirka.org</a> : Spivak errata</li>
-</ul>
+<section id="벡터장과-발산" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="벡터장과-발산"><span class="header-section-number">16.1</span> 벡터장과 발산</h2>
+<section id="연습문제" class="level3">
+<h3 class="anchored" data-anchor-id="연습문제">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_15_1_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 16.1 (SNU 15.1.2)</strong></span> <span class="math inline">\(n\)</span>-공간의 열린집합에서 정의된 벡터장 <span class="math inline">\(\boldsymbol{F},\,\boldsymbol{G}\)</span> 및 함수 <span class="math inline">\(h\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\begin{aligned}
+\nabla \boldsymbol{\cdot}(\boldsymbol{F}+\boldsymbol{G}) &amp;= \nabla \boldsymbol{\cdot}\boldsymbol{F} + \nabla \boldsymbol{\cdot}\boldsymbol{G},\\[0.3em]
+\nabla \boldsymbol{\cdot}(h\boldsymbol{F}) &amp;= (\nabla h) \boldsymbol{\cdot}\boldsymbol{F} + h(\nabla \boldsymbol{\cdot}\boldsymbol{F})
+\end{aligned}
+\]</span></p>
+<p>임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+\sum_{i} \partial_i (\boldsymbol{F}+\boldsymbol{G})_i &amp;= \sum_i \partial_i F_i + \sum_i \partial_i G_i =  \nabla \boldsymbol{\cdot}\boldsymbol{F} + \nabla \boldsymbol{\cdot}\boldsymbol{G},\\[0.3em]
+\sum_i \partial _i (hF_i) &amp;= \sum_i (\partial_i h) F_i + \sum_i h(\partial_i F_i) =\nabla h \boldsymbol{\cdot}\boldsymbol{F} + h\nabla \boldsymbol{\cdot}\boldsymbol{F}.
+\end{aligned}
+\]</span></p>
+</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-DoCarmo1998differential" class="csl-entry" role="listitem">
-Do Carmo, M. P. 1998. <em>Differential Forms and Applications</em>. Universitext. Springer Berlin Heidelberg. <a href="https://books.google.co.kr/books?id=O2A9pb2DGJ4C">https://books.google.co.kr/books?id=O2A9pb2DGJ4C</a>.
-</div>
-<div id="ref-MunkresAnalysis" class="csl-entry" role="listitem">
-Munkres, J. R. 2019. <em>Analysis on Manifolds</em>. CRC Press. <a href="https://books.google.co.kr/books?id=rSTcqZMZ8UIC">https://books.google.co.kr/books?id=rSTcqZMZ8UIC</a>.
-</div>
-<div id="ref-Rudin1976" class="csl-entry" role="listitem">
-Rudin, W. 1976. <em>Principles of Mathematical Analysis</em>. Third. International Series in Pure and Applied Mathematics. McGraw-Hill.
-</div>
-<div id="ref-Spivak1965" class="csl-entry" role="listitem">
-Spivak, M. 1965. <em>Calculus on Manifolds: A Modern Approach to Classical Theorems of Advanced Calculus</em>. Avalon Publishing.
-</div>
-<div id="ref-SNUCalculus2013" class="csl-entry" role="listitem">
-김홍종. 2000. <em>미적분학 1, 2</em>. 2nd ed. 서울대학교 출판문화원.
-</div>
-</div>
 </section>
 </section>
 
@@ -733,13 +743,13 @@ Spivak, M. 1965. <em>Calculus on Manifolds: A Modern Approach to Classical Theor
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="../../src/calculus/15_green_theorem.html" class="pagination-link" aria-label="벡터장의 발산과 그린정리">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">벡터장의 발산과 그린정리</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/calculus/01_series.html" class="pagination-link" aria-label="수열과 급수">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">수열과 급수</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

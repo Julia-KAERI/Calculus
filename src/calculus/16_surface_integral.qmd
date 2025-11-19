@@ -1,0 +1,49 @@
+---
+title: "면적분과 발산정리 및 스토크스 정리"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+{{< include ../../latexmacros.qmd >}}
+
+</br>
+
+
+
+## 곡면
+
+### 연습문제
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_15_1_2} 
+
+#### SNU 15.1.2
+
+$n$-공간의 열린집합에서 정의된 벡터장 $\bf{F},\,\bf{G}$ 및 함수 $h$ 에 대하여
+
+$$
+\begin{aligned}
+\nabla \bcdot (\bf{F}+\bf{G}) &= \nabla \bcdot \bf{F} + \nabla \bcdot \bf{G},\\[0.3em]
+\nabla \bcdot (h\bf{F}) &= (\nabla h) \bcdot \bf{F} + h(\nabla \bcdot \bf{F})
+\end{aligned}
+$$
+
+임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\sum_{i} \partial_i (\bf{F}+\bf{G})_i &= \sum_i \partial_i F_i + \sum_i \partial_i G_i =  \nabla \bcdot \bf{F} + \nabla \bcdot \bf{G},\\[0.3em]
+\sum_i \partial _i (hF_i) &= \sum_i (\partial_i h) F_i + \sum_i h(\partial_i F_i) =\nabla h \bcdot \bf{F} + h\nabla \bcdot \bf{F}.
+\end{aligned}
+$$
+
+:::
