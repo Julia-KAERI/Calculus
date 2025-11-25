@@ -15,23 +15,13 @@ crossref:
 
 ### 연습문제
 
-
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-CAL_15_1_2} 
+::: {#exr-CAL_16_1_1} 
 
-#### SNU 15.1.2
+#### SNU 16.1.1
 
-$n$-공간의 열린집합에서 정의된 벡터장 $\bf{F},\,\bf{G}$ 및 함수 $h$ 에 대하여
-
-$$
-\begin{aligned}
-\nabla \bcdot (\bf{F}+\bf{G}) &= \nabla \bcdot \bf{F} + \nabla \bcdot \bf{G},\\[0.3em]
-\nabla \bcdot (h\bf{F}) &= (\nabla h) \bcdot \bf{F} + h(\nabla \bcdot \bf{F})
-\end{aligned}
-$$
-
-임을 보이라.
+포물면 $z=x^2+y^2$ 을 매개화하라.
 
 :::
 
@@ -39,10 +29,86 @@ $$
 
 ::: {.solution}
 
+$X(r,\,\theta)=(r\cos\theta,\, r \sin \theta,\, r^2)$.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_16_1_3} 
+
+#### SNU 16.1.3
+
+좌표공간에서 중심이 $(0,\,R,\,0)$ 이고 반지름의 길이가 $r$ 인 $yz$-평면의 원을 $z$-축 주위로 회전시켜 얻은 원환면(torus) 을 매개화하라. (단, $0<r<R$).
+
+:::
+
+</div>
+
+::: {.solution}
+
+![Torus](figures/exr_16_1_3/exr_16_1_3.png){#fig-CAL_exr_16_1_3 width=300}
+
+위의 좌표계를 생각하면
+
+$$
+X(\theta,\,\varphi) = ((R + r \cos\theta) \cos \varphi,\, (R + r\cos\theta)\sin \varphi,\, r \sin \theta)
+$$
+
+
+:::
+
+</br>
+
+## 곡면의 넓이
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_16_2_0_3} 
+
+#### SNU 기본연습문제 16.2.0.3
+
+현수면
+
+$$
+\cosh z = r = \sqrt{x^2+y^2},\qquad z_1\le z \le z_2
+$$
+
+의 넓이를 구하라.
+
+![현수면](figures/exr_16_2_0_3/exr_16_2_0_3.png){#fig-exr_16_2_0_3 width=300}
+
+:::
+</div>
+
+::: {.solution}
+
+$(\theta,\,z)$ 로 매개화하면
+$$
+X(\theta,\,z) = \left(\cosh (z) \cos (\theta),\, \cosh (z) \sin (\theta),\, z\right)
+$$
+
+이며
+
 $$
 \begin{aligned}
-\sum_{i} \partial_i (\bf{F}+\bf{G})_i &= \sum_i \partial_i F_i + \sum_i \partial_i G_i =  \nabla \bcdot \bf{F} + \nabla \bcdot \bf{G},\\[0.3em]
-\sum_i \partial _i (hF_i) &= \sum_i (\partial_i h) F_i + \sum_i h(\partial_i F_i) =\nabla h \bcdot \bf{F} + h\nabla \bcdot \bf{F}.
+X_\theta &= \left(- \cosh (z) \sin (\theta),\, \cosh (z) \cos (\theta),\, 0\right), \\[0.3em]
+X_z &= \left(\sinh(z) \cos (\theta),\, \sinh(z) \sin (\theta),\,1 \right)
+\end{aligned}
+$$
+
+이므로
+
+$$
+|\bf{N}_{\theta,\,z}| = \cosh^2(z)
+$$
+
+이다. 따라서,
+
+$$
+\begin{aligned}
+\text{Area} &= \dfrac{\pi}{2} \int_{z_1}^{z_2} (e^{2z} + 2 + e^{-2z})\,dz \\[0.3em]
+&= \dfrac{\pi}{4} \left[(e^{2z_2}-e^{2z_1}) + 4(z_2-z_1) - (e^{-2z_2}- e^{-2z_1})\right]
 \end{aligned}
 $$
 

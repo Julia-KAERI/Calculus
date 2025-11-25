@@ -1254,7 +1254,7 @@
     "href": "src/calculus/16_surface_integral.html",
     "title": "16  면적분과 발산정리 및 스토크스 정리",
     "section": "",
-    "text": "16.1 벡터장과 발산",
+    "text": "16.1 곡면",
     "crumbs": [
       "미적분학",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>면적분과 발산정리 및 스토크스 정리</span>"
@@ -1266,6 +1266,28 @@
     "title": "16  면적분과 발산정리 및 스토크스 정리",
     "section": "",
     "text": "연습문제\n\n\n연습문제 16.1 (SNU 15.1.2) \\(n\\)-공간의 열린집합에서 정의된 벡터장 \\(\\boldsymbol{F},\\,\\boldsymbol{G}\\) 및 함수 \\(h\\) 에 대하여\n\\[\n\\begin{aligned}\n\\nabla \\boldsymbol{\\cdot}(\\boldsymbol{F}+\\boldsymbol{G}) &= \\nabla \\boldsymbol{\\cdot}\\boldsymbol{F} + \\nabla \\boldsymbol{\\cdot}\\boldsymbol{G},\\\\[0.3em]\n\\nabla \\boldsymbol{\\cdot}(h\\boldsymbol{F}) &= (\\nabla h) \\boldsymbol{\\cdot}\\boldsymbol{F} + h(\\nabla \\boldsymbol{\\cdot}\\boldsymbol{F})\n\\end{aligned}\n\\]\n임을 보이라.\n\n\n\n(해답). \\[\n\\begin{aligned}\n\\sum_{i} \\partial_i (\\boldsymbol{F}+\\boldsymbol{G})_i &= \\sum_i \\partial_i F_i + \\sum_i \\partial_i G_i =  \\nabla \\boldsymbol{\\cdot}\\boldsymbol{F} + \\nabla \\boldsymbol{\\cdot}\\boldsymbol{G},\\\\[0.3em]\n\\sum_i \\partial _i (hF_i) &= \\sum_i (\\partial_i h) F_i + \\sum_i h(\\partial_i F_i) =\\nabla h \\boldsymbol{\\cdot}\\boldsymbol{F} + h\\nabla \\boldsymbol{\\cdot}\\boldsymbol{F}.\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "미적분학",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>면적분과 발산정리 및 스토크스 정리</span>"
+    ]
+  },
+  {
+    "objectID": "src/calculus/16_surface_integral.html#곡면",
+    "href": "src/calculus/16_surface_integral.html#곡면",
+    "title": "16  면적분과 발산정리 및 스토크스 정리",
+    "section": "",
+    "text": "연습문제\n\n\n연습문제 16.1 (SNU 16.1.1) 포물면 \\(z=x^2+y^2\\) 을 매개화하라.\n\n\n\n(해답). \\(X(r,\\,\\theta)=(r\\cos\\theta,\\, r \\sin \\theta,\\, r^2)\\).\n\n\n\n\n연습문제 16.2 (SNU 16.1.3) 좌표공간에서 중심이 \\((0,\\,R,\\,0)\\) 이고 반지름의 길이가 \\(r\\) 인 \\(yz\\)-평면의 원을 \\(z\\)-축 주위로 회전시켜 얻은 원환면(torus) 을 매개화하라. (단, \\(0&lt;r&lt;R\\)).\n\n\n\n(해답). \n\n\n\n\n\n\n그림 16.1: Torus\n\n\n\n위의 좌표계를 생각하면\n\\[\nX(\\theta,\\,\\varphi) = ((R + r \\cos\\theta) \\cos \\varphi,\\, (R + r\\cos\\theta)\\sin \\varphi,\\, r \\sin \\theta)\n\\]",
+    "crumbs": [
+      "미적분학",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>면적분과 발산정리 및 스토크스 정리</span>"
+    ]
+  },
+  {
+    "objectID": "src/calculus/16_surface_integral.html#곡면의-넓이",
+    "href": "src/calculus/16_surface_integral.html#곡면의-넓이",
+    "title": "16  면적분과 발산정리 및 스토크스 정리",
+    "section": "16.2 곡면의 넓이",
+    "text": "16.2 곡면의 넓이\n\n\n연습문제 16.3 (SNU 기본연습문제 16.2.0.3) 현수면\n\\[\n\\cosh z = r = \\sqrt{x^2+y^2},\\qquad z_1\\le z \\le z_2\n\\]\n의 넓이를 구하라.\n\n\n\n\n\n\n그림 16.2: 현수면\n\n\n\n\n\n\n(해답). \\((\\theta,\\,z)\\) 로 매개화하면 \\[\nX(\\theta,\\,z) = \\left(\\cosh (z) \\cos (\\theta),\\, \\cosh (z) \\sin (\\theta),\\, z\\right)\n\\]\n이며\n\\[\n\\begin{aligned}\nX_\\theta &= \\left(- \\cosh (z) \\sin (\\theta),\\, \\cosh (z) \\cos (\\theta),\\, 0\\right), \\\\[0.3em]\nX_z &= \\left(\\sinh(z) \\cos (\\theta),\\, \\sinh(z) \\sin (\\theta),\\,1 \\right)\n\\end{aligned}\n\\]\n이므로\n\\[\n|\\boldsymbol{N}_{\\theta,\\,z}| = \\cosh^2(z)\n\\]\n이다. 따라서,\n\\[\n\\begin{aligned}\n\\text{Area} &= \\dfrac{\\pi}{2} \\int_{z_1}^{z_2} (e^{2z} + 2 + e^{-2z})\\,dz \\\\[0.3em]\n&= \\dfrac{\\pi}{4} \\left[(e^{2z_2}-e^{2z_1}) + 4(z_2-z_1) - (e^{-2z_2}- e^{-2z_1})\\right]\n\\end{aligned}\n\\]",
     "crumbs": [
       "미적분학",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>면적분과 발산정리 및 스토크스 정리</span>"
